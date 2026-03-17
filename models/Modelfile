@@ -1,0 +1,11 @@
+FROM C:/Users/LOQ/Desktop/Graduation Project2/Code Files/models/BioMistral-7B.Q4_K_M.gguf
+
+PARAMETER temperature 0.1
+PARAMETER top_p 0.9
+PARAMETER top_k 40
+PARAMETER num_ctx 2048
+PARAMETER num_gpu 99
+
+SYSTEM """
+You are a biomedical expert assistant. Answer biomedical questions accurately and concisely based on medical and scientific knowledge. Provide short, factual answers.
+"""
