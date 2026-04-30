@@ -1,0 +1,2767 @@
+ERROR ANALYSIS — ALL EXPERIMENTS
+======================================================================
+
+
+File: adaptive_adaptive_atk_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — adaptive_adaptive_atk_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 107 (31.3%)
+  Wrong/Failed    : 235 (68.7%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  205  (59.9%)
+  Format Error    (name instead of DB ID)           :    3  (0.9%)
+  Hallucination   (DB ID not in candidates)         :   27  (7.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_108      Drug: Golimumab            Pred: 'None of the provided'  Expected: DB00072
+  Q: MH_dev_130      Drug: Infliximab           Pred: 'Based on the provide'  Expected: DB01418
+  Q: MH_dev_297      Drug: Vilazodone           Pred: '<think>
+The user wan'  Expected: DB00850
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00104' — 5 times
+  'DB00191' — 4 times
+  'DB00819' — 4 times
+  'DB00222' — 4 times
+  'DB00744' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: adaptive_b4exp11_wiki_v2_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — adaptive_b4exp11_wiki_v2_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 86 (25.1%)
+  Wrong/Failed    : 256 (74.9%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  130  (38.0%)
+  Format Error    (name instead of DB ID)           :   19  (5.6%)
+  Hallucination   (DB ID not in candidates)         :  102  (29.8%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    5  (1.5%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_6        Drug: Mycophenolic acid    Pred: DB00174    Expected: DB01656    (Roflumilast)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB00071    Expected: DB00338    (Omeprazole)
+  Q: MH_dev_14       Drug: Eplerenone           Pred: DB00758    Expected: DB01197    (Captopril)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_22       Drug: Trastuzumab emtansine Pred: 'Based on the provide'  Expected: DB01656
+  Q: MH_dev_38       Drug: Baclofen             Pred: '<think>
+Thinking Pro'  Expected: DB04908
+  Q: MH_dev_70       Drug: Pyrimethamine        Pred: '<think>
+Thinking Pro'  Expected: DB00623
+  Q: MH_dev_73       Drug: Dronabinol           Pred: '<think>
+Thinking Pro'  Expected: DB08815
+  Q: MH_dev_76       Drug: Cinacalcet           Pred: '<think>
+Thinking Pro'  Expected: DB09068
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  '<think>
+Thinking Pro' — 16 times
+  'DB01285' — 4 times
+  'DB08815' — 3 times
+  'DB00758' — 3 times
+  'DB00563' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: adaptive_b4exp11_wiki_v2_medical_sections_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — adaptive_b4exp11_wiki_v2_medical_sections_k3_qwen3
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 75 (21.9%)
+  Wrong/Failed    : 267 (78.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  127  (37.1%)
+  Format Error    (name instead of DB ID)           :   19  (5.6%)
+  Hallucination   (DB ID not in candidates)         :  114  (33.3%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    7  (2.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00154    Expected: DB01151    (Desipramine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+  Q: MH_dev_6        Drug: Mycophenolic acid    Pred: DB00174    Expected: DB01656    (Roflumilast)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB00116    Expected: DB00338    (Omeprazole)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: '<think>
+Thinking Pro'  Expected: DB06695
+  Q: MH_dev_19       Drug: Dicoumarol           Pred: '<think>
+Thinking Pro'  Expected: DB01098
+  Q: MH_dev_22       Drug: Trastuzumab emtansine Pred: 'Based on the provide'  Expected: DB01656
+  Q: MH_dev_38       Drug: Baclofen             Pred: '<think>
+Thinking Pro'  Expected: DB04908
+  Q: MH_dev_39       Drug: Nintedanib           Pred: '<think>
+Thinking Pro'  Expected: DB04905
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  '<think>
+Thinking Pro' — 14 times
+  'DB00191' — 5 times
+  'DB00563' — 4 times
+  'DB08815' — 4 times
+  'DB00758' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: adaptive_b4exp11_wiki_v2_query2doc_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — adaptive_b4exp11_wiki_v2_query2doc_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 88 (25.7%)
+  Wrong/Failed    : 254 (74.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  159  (46.5%)
+  Format Error    (name instead of DB ID)           :   14  (4.1%)
+  Hallucination   (DB ID not in candidates)         :   80  (23.4%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    1  (0.3%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_6        Drug: Mycophenolic acid    Pred: DB00136    Expected: DB01656    (Roflumilast)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB00116    Expected: DB00338    (Omeprazole)
+  Q: MH_dev_15       Drug: Cabozantinib         Pred: DB00203    Expected: DB08899    (Enzalutamide)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_38       Drug: Baclofen             Pred: '<think>
+Thinking Pro'  Expected: DB04908
+  Q: MH_dev_78       Drug: Acetylsalicylic acid Pred: '<think>
+Thinking Pro'  Expected: DB01120
+  Q: MH_dev_84       Drug: Pitavastatin         Pred: '<think>
+Thinking Pro'  Expected: DB00266
+  Q: MH_dev_85       Drug: Galantamine          Pred: '<think>
+Thinking Pro'  Expected: DB00850
+  Q: MH_dev_90       Drug: Gemfibrozil          Pred: '<think>
+Thinking Pro'  Expected: DB00762
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  '<think>
+Thinking Pro' — 14 times
+  'DB00104' — 4 times
+  'DB08815' — 3 times
+  'DB00203' — 3 times
+  'DB00341' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: adaptive_b4exp11_wiki_v2_sequential_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — adaptive_b4exp11_wiki_v2_sequential_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 85 (24.9%)
+  Wrong/Failed    : 257 (75.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  122  (35.7%)
+  Format Error    (name instead of DB ID)           :   16  (4.7%)
+  Hallucination   (DB ID not in candidates)         :  116  (33.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    3  (0.9%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00154    Expected: DB01151    (Desipramine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB00116    Expected: DB00338    (Omeprazole)
+  Q: MH_dev_14       Drug: Eplerenone           Pred: DB00758    Expected: DB01197    (Captopril)
+  Q: MH_dev_16       Drug: Aripiprazole         Pred: DB00988    Expected: DB06603    (Panobinostat)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: '<think>
+Thinking Pro'  Expected: DB06695
+  Q: MH_dev_19       Drug: Dicoumarol           Pred: '<think>
+Thinking Pro'  Expected: DB01098
+  Q: MH_dev_35       Drug: Docetaxel            Pred: '<think>
+The user wan'  Expected: DB09073
+  Q: MH_dev_70       Drug: Pyrimethamine        Pred: '<think>
+Thinking Pro'  Expected: DB00623
+  Q: MH_dev_78       Drug: Acetylsalicylic acid Pred: '<think>
+Thinking Pro'  Expected: DB01120
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  '<think>
+Thinking Pro' — 14 times
+  'DB00215' — 4 times
+  'DB00877' — 4 times
+  'DB01285' — 4 times
+  'DB00563' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: adaptive_b4exp12_combined_v2_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — adaptive_b4exp12_combined_v2_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 109 (31.9%)
+  Wrong/Failed    : 233 (68.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  203  (59.4%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :   30  (8.8%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00104' — 6 times
+  'DB00819' — 4 times
+  'DB00222' — 4 times
+  'DB00317' — 3 times
+  'DB00988' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: adaptive_b4exp13_signal_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — adaptive_b4exp13_signal_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 99 (28.9%)
+  Wrong/Failed    : 243 (71.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  204  (59.6%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   38  (11.1%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05657    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_320      Drug: Gliclazide           Pred: 'Based on the provide'  Expected: DB08907
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00104' — 6 times
+  'DB00191' — 5 times
+  'DB00317' — 4 times
+  'DB00086' — 4 times
+  'DB00341' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: api_exp1_guided_retrieval_gpt_oss_120b_free_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — api_exp1_guided_retrieval_gpt_oss_120b_free
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 136 (39.8%)
+  Wrong/Failed    : 206 (60.2%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  206  (60.2%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :    0  (0.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB01373    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_11       Drug: Desmopressin         Pred: DB01120    Expected: DB00328    (Indomethacin)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01050' — 5 times
+  'DB01098' — 4 times
+  'DB00317' — 4 times
+  'DB00988' — 3 times
+  'DB01259' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+======================================================================
+
+
+File: baseline1_cot_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline1_cot
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 50 (14.6%)
+  Wrong/Failed    : 292 (85.4%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  240  (70.2%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   51  (14.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01277    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01229    Expected: DB00619    (Imatinib)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_340      Drug: Roflumilast          Pred: 'DB0175'  Expected: DB06603
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01211' — 6 times
+  'DB01285' — 5 times
+  'DB01109' — 4 times
+  'DB00009' — 3 times
+  'DB01120' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline1_fewshot_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline1_fewshot
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 54 (15.8%)
+  Wrong/Failed    : 288 (84.2%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  238  (69.6%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   49  (14.3%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01277    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01229    Expected: DB00619    (Imatinib)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_340      Drug: Roflumilast          Pred: 'DB0175'  Expected: DB06603
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01285' — 6 times
+  'DB01211' — 6 times
+  'DB01109' — 4 times
+  'DB01120' — 3 times
+  'DB01238' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline1_fewshot_temp0_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline1_fewshot_temp0
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 48 (14.0%)
+  Wrong/Failed    : 294 (86.0%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  237  (69.3%)
+  Format Error    (name instead of DB ID)           :    2  (0.6%)
+  Hallucination   (DB ID not in candidates)         :   55  (16.1%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01277    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01229    Expected: DB00619    (Imatinib)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_163      Drug: Calcitriol           Pred: 'DB0136'  Expected: DB08820
+  Q: MH_dev_340      Drug: Roflumilast          Pred: 'DB0175'  Expected: DB06603
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01285' — 5 times
+  'DB01211' — 5 times
+  'DB01120' — 4 times
+  'DB01109' — 4 times
+  'DB00009' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline1_original_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline1_original
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 53 (15.5%)
+  Wrong/Failed    : 289 (84.5%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  233  (68.1%)
+  Format Error    (name instead of DB ID)           :    2  (0.6%)
+  Hallucination   (DB ID not in candidates)         :   54  (15.8%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01229    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_307      Drug: Dicoumarol           Pred: 'DB0154'  Expected: DB00422
+  Q: MH_dev_340      Drug: Roflumilast          Pred: 'DB0175'  Expected: DB06603
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01211' — 6 times
+  'DB01285' — 5 times
+  'DB01120' — 4 times
+  'DB01109' — 4 times
+  'DB00379' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline1_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline1
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 47 (13.7%)
+  Wrong/Failed    : 295 (86.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  240  (70.2%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   54  (15.8%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01277    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01229    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_340      Drug: Roflumilast          Pred: 'DB0175'  Expected: DB06603
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01211' — 6 times
+  'DB01285' — 5 times
+  'DB01120' — 4 times
+  'DB01238' — 3 times
+  'DB00207' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline1_temp0_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline1_temp0
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 48 (14.0%)
+  Wrong/Failed    : 294 (86.0%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  242  (70.8%)
+  Format Error    (name instead of DB ID)           :    2  (0.6%)
+  Hallucination   (DB ID not in candidates)         :   50  (14.6%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01277    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01229    Expected: DB00619    (Imatinib)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_163      Drug: Calcitriol           Pred: 'DB0136'  Expected: DB08820
+  Q: MH_dev_340      Drug: Roflumilast          Pred: 'DB0175'  Expected: DB06603
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01211' — 6 times
+  'DB01285' — 5 times
+  'DB01109' — 4 times
+  'DB00379' — 3 times
+  'DB01120' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline2_k10_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline2_k10
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 42 (12.3%)
+  Wrong/Failed    : 300 (87.7%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  168  (49.1%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :  131  (38.3%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05657    Expected: DB00619    (Imatinib)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB08932    Expected: DB00559    (Bosentan)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB05305    Expected: DB00338    (Omeprazole)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_193      Drug: Ranitidine           Pred: 'The correct answer i'  Expected: DB00422
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01285' — 8 times
+  'DB01656' — 7 times
+  'DB01296' — 6 times
+  'DB01281' — 6 times
+  'DB00379' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline2_k20_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline2_k20
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 21 (6.1%)
+  Wrong/Failed    : 321 (93.9%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  128  (37.4%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  193  (56.4%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01216    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01229    Expected: DB00619    (Imatinib)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB08932    Expected: DB00559    (Bosentan)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01656' — 8 times
+  'DB01285' — 7 times
+  'DB01296' — 5 times
+  'DB01281' — 5 times
+  'DB06589' — 5 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline2_k3_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline2_k3
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 39 (11.4%)
+  Wrong/Failed    : 303 (88.6%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  210  (61.4%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   92  (26.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB01406    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB08932    Expected: DB00559    (Bosentan)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_281      Drug: Paliperidone         Pred: 'DB0734'  Expected: DB00734
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01259' — 8 times
+  'DB01285' — 6 times
+  'DB01656' — 5 times
+  'DB01120' — 5 times
+  'DB01406' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline2_k5_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline2_k5
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 40 (11.7%)
+  Wrong/Failed    : 302 (88.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  204  (59.6%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :   98  (28.7%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01277    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB01406    Expected: DB00605    (Sulindac)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01285' — 8 times
+  'DB01259' — 5 times
+  'DB01590' — 5 times
+  'DB01296' — 5 times
+  'DB01120' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline2_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline2
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 40 (11.7%)
+  Wrong/Failed    : 302 (88.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  201  (58.8%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   98  (28.7%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    2  (0.6%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB01406    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB08932    Expected: DB00559    (Bosentan)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB05262    Expected: DB00338    (Omeprazole)
+  Q: MH_dev_11       Drug: Desmopressin         Pred: DB01120    Expected: DB00328    (Indomethacin)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_310      Drug: Citalopram           Pred: 'DB0734'  Expected: DB00734
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01285' — 6 times
+  'DB01259' — 6 times
+  'DB01406' — 4 times
+  'DB01120' — 4 times
+  'DB01281' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline3_fewshot_k5_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline3_fewshot_k5
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 44 (12.9%)
+  Wrong/Failed    : 298 (87.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  185  (54.1%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  113  (33.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB01259    Expected: DB00065    (Infliximab)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB04958    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB01406    Expected: DB00605    (Sulindac)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01151' — 9 times
+  'DB01259' — 7 times
+  'DB01656' — 7 times
+  'DB01281' — 6 times
+  'DB01285' — 6 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline3_k10_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline3_k10
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 34 (9.9%)
+  Wrong/Failed    : 308 (90.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  177  (51.8%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  131  (38.3%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01216    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05465    Expected: DB00619    (Imatinib)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB08932    Expected: DB00559    (Bosentan)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01281' — 9 times
+  'DB01656' — 6 times
+  'DB01296' — 5 times
+  'DB01259' — 5 times
+  'DB06589' — 5 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline3_k20_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline3_k20
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 30 (8.8%)
+  Wrong/Failed    : 312 (91.2%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  131  (38.3%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :  180  (52.6%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01216    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB01406    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB01411    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_92       Drug: Levocarnitine        Pred: 'DB0184'  Expected: DB00682
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01656' — 8 times
+  'DB01285' — 8 times
+  'DB01281' — 6 times
+  'DB01259' — 5 times
+  'DB01296' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline3_k5_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline3_k5
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 56 (16.4%)
+  Wrong/Failed    : 286 (83.6%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  192  (56.1%)
+  Format Error    (name instead of DB ID)           :    2  (0.6%)
+  Hallucination   (DB ID not in candidates)         :   92  (26.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01240    Expected: DB00619    (Imatinib)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB01406    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB08932    Expected: DB00559    (Bosentan)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_85       Drug: Galantamine          Pred: 'The correct answer i'  Expected: DB00850
+  Q: MH_dev_310      Drug: Citalopram           Pred: 'The correct answer i'  Expected: DB00734
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01259' — 8 times
+  'DB01095' — 6 times
+  'DB01285' — 5 times
+  'DB01281' — 5 times
+  'DB01656' — 5 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: baseline3_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — baseline3
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 42 (12.3%)
+  Wrong/Failed    : 300 (87.7%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  214  (62.6%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :   86  (25.1%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB08910    Expected: DB00065    (Infliximab)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01277    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01229    Expected: DB00619    (Imatinib)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB01406    Expected: DB00605    (Sulindac)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01285' — 7 times
+  'DB01281' — 6 times
+  'DB01259' — 6 times
+  'DB01095' — 5 times
+  'DB01656' — 5 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: decomp_2hop_mechanism_hybrid_scored_k3_v2_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — decomp_2hop_mechanism_hybrid_scored_k3_v2_qwen3_5-
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 28 (8.2%)
+  Wrong/Failed    : 314 (91.8%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :   71  (20.8%)
+  Format Error    (name instead of DB ID)           :   16  (4.7%)
+  Hallucination   (DB ID not in candidates)         :  227  (66.4%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_18       Drug: Bezafibrate          Pred: DB06155    Expected: DB00091    (Cyclosporine)
+  Q: MH_dev_23       Drug: Arsenic trioxide     Pred: DB00031    Expected: DB00104    (Octreotide)
+  Q: MH_dev_24       Drug: Nabilone             Pred: DB05073    Expected: DB00368    (Norepinephrine)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: 'None of the listed c'  Expected: DB01151
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: 'None of the provided'  Expected: DB00605
+  Q: MH_dev_26       Drug: Bicalutamide         Pred: 'Based on the provide'  Expected: DB00266
+  Q: MH_dev_51       Drug: Etoposide            Pred: 'None of the provided'  Expected: DB00559
+  Q: MH_dev_89       Drug: Tramadol             Pred: 'Based on the provide'  Expected: DB00734
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'Based on the provide' — 9 times
+  'DB00031' — 6 times
+  'None of the provided' — 5 times
+  'DB08815' — 4 times
+  'DB01238' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: diagnosis_free_k5_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — diagnosis_free_k5
+======================================================================
+  Total questions : 50
+  Correct (EM=1)  : 16 (32.0%)
+  Wrong/Failed    : 34 (68.0%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :   20  (40.0%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :    5  (10.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    9  (18.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB06101    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00909    Expected: DB00605    (Sulindac)
+  Q: MH_dev_17       Drug: Framycetin           Pred: DB01892    Expected: DB00784    (Mefenamic acid)
+  Q: MH_dev_20       Drug: Vortioxetine         Pred: DB01791    Expected: DB00159    (Icosapent)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00563' — 2 times
+  'DB00623' — 2 times
+  'DB06101' — 1 times
+  'DB02527' — 1 times
+  'DB00588' — 1 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: diagnosis_qwen3.6-plus-preview_k5_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — diagnosis_qwen3.6-plus-preview_k5
+======================================================================
+  Total questions : 50
+  Correct (EM=1)  : 23 (46.0%)
+  Wrong/Failed    : 27 (54.0%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :   27  (54.0%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :    0  (0.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05095    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_16       Drug: Aripiprazole         Pred: DB00988    Expected: DB06603    (Panobinostat)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00623' — 2 times
+  'DB00191' — 2 times
+  'DB04871' — 1 times
+  'DB05095' — 1 times
+  'DB00588' — 1 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+======================================================================
+
+
+File: eb_bridge_pivoted_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — eb_bridge_pivoted_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 95 (27.8%)
+  Wrong/Failed    : 247 (72.2%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  188  (55.0%)
+  Format Error    (name instead of DB ID)           :   18  (5.3%)
+  Hallucination   (DB ID not in candidates)         :   41  (12.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00125    Expected: DB00065    (Infliximab)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05657    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: '<think>
+
+</think>
+
+N'  Expected: DB00605
+  Q: MH_dev_30       Drug: Rituximab            Pred: '<think>
+
+</think>
+
+N'  Expected: DB00622
+  Q: MH_dev_53       Drug: Carfilzomib          Pred: '<think>
+
+</think>
+
+N'  Expected: DB04905
+  Q: MH_dev_62       Drug: Certolizumab pegol   Pred: '<think>
+
+</think>
+
+N'  Expected: DB08910
+  Q: MH_dev_66       Drug: Tocilizumab          Pred: '<think>
+
+</think>
+
+N'  Expected: DB00619
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  '<think>
+
+</think>
+
+N' — 15 times
+  'DB00988' — 3 times
+  'DB00452' — 3 times
+  'DB00563' — 3 times
+  'DB00605' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: eb_cand_filtered_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — eb_cand_filtered_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 92 (26.9%)
+  Wrong/Failed    : 250 (73.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  234  (68.4%)
+  Format Error    (name instead of DB ID)           :    2  (0.6%)
+  Hallucination   (DB ID not in candidates)         :   14  (4.1%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB02377    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00125    Expected: DB00065    (Infliximab)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01277    Expected: DB01151    (Desipramine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_133      Drug: Rituximab            Pred: '<think>
+The user wan'  Expected: DB00072
+  Q: MH_dev_320      Drug: Gliclazide           Pred: 'Based on the provide'  Expected: DB08907
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00104' — 4 times
+  'DB00316' — 4 times
+  'DB00203' — 4 times
+  'DB08910' — 3 times
+  'DB00563' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+======================================================================
+
+
+File: eb_guided_retrieval_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — eb_guided_retrieval_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 114 (33.3%)
+  Wrong/Failed    : 228 (66.7%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  201  (58.8%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :   27  (7.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00819' — 4 times
+  'DB00744' — 4 times
+  'DB00104' — 3 times
+  'DB00171' — 3 times
+  'DB00191' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: eb_kb_guided_retrieval_k3_qwen3.5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — eb_kb_guided_retrieval_k3_qwen3.5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 110 (32.2%)
+  Wrong/Failed    : 232 (67.8%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  200  (58.5%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   31  (9.1%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB01259    Expected: DB00065    (Infliximab)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00921    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01221    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_153      Drug: Exenatide            Pred: 'Based on the provide'  Expected: DB00266
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00184' — 6 times
+  'DB00317' — 6 times
+  'DB00316' — 5 times
+  'DB00203' — 4 times
+  'DB00514' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: hybrid_rrf_k5_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — hybrid_rrf_k5
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 44 (12.9%)
+  Wrong/Failed    : 298 (87.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  212  (62.0%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   85  (24.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: ?                    Pred: DB01656    Expected: DB04844    (?)
+  Q: MH_dev_2        Drug: ?                    Pred: DB01277    Expected: DB01151    (?)
+  Q: MH_dev_3        Drug: ?                    Pred: DB01240    Expected: DB00619    (?)
+  Q: MH_dev_5        Drug: ?                    Pred: DB01406    Expected: DB00605    (?)
+  Q: MH_dev_7        Drug: ?                    Pred: DB01411    Expected: DB06695    (?)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_304      Drug: ?                    Pred: 'DB0864'  Expected: DB09053
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01285' — 7 times
+  'DB01259' — 6 times
+  'DB01656' — 5 times
+  'DB01281' — 5 times
+  'DB01590' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: hybrid_weighted_70_30_k5_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — hybrid_weighted_70_30_k5
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 45 (13.2%)
+  Wrong/Failed    : 297 (86.8%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  196  (57.3%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :  100  (29.2%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: ?                    Pred: DB04871    Expected: DB04844    (?)
+  Q: MH_dev_2        Drug: ?                    Pred: DB01277    Expected: DB01151    (?)
+  Q: MH_dev_3        Drug: ?                    Pred: DB05876    Expected: DB00619    (?)
+  Q: MH_dev_4        Drug: ?                    Pred: DB00588    Expected: DB00677    (?)
+  Q: MH_dev_5        Drug: ?                    Pred: DB01406    Expected: DB00605    (?)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_310      Drug: ?                    Pred: 'DB0734'  Expected: DB00734
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01259' — 9 times
+  'DB01285' — 8 times
+  'DB01095' — 6 times
+  'DB01590' — 5 times
+  'DB01281' — 5 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: ov_ov-exp1_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — ov_ov-exp1_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 57 (16.7%)
+  Wrong/Failed    : 285 (83.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  285  (83.3%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :    0  (0.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00125    Expected: DB00065    (Infliximab)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB02527    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB00162    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00988' — 6 times
+  'DB00758' — 5 times
+  'DB00184' — 5 times
+  'DB00116' — 4 times
+  'DB00317' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+======================================================================
+
+
+File: ov_ov-exp2_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — ov_ov-exp2_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 70 (20.5%)
+  Wrong/Failed    : 272 (79.5%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  272  (79.5%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :    0  (0.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00125    Expected: DB00065    (Infliximab)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB01267    Expected: DB00605    (Sulindac)
+  Q: MH_dev_6        Drug: Mycophenolic acid    Pred: DB00136    Expected: DB01656    (Roflumilast)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00317' — 5 times
+  'DB00988' — 5 times
+  'DB00184' — 5 times
+  'DB00116' — 4 times
+  'DB00191' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+======================================================================
+
+
+File: ov_ov-exp3_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — ov_ov-exp3_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 95 (27.8%)
+  Wrong/Failed    : 247 (72.2%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  196  (57.3%)
+  Format Error    (name instead of DB ID)           :   16  (4.7%)
+  Hallucination   (DB ID not in candidates)         :   35  (10.2%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00125    Expected: DB00065    (Infliximab)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_77       Drug: Botulinum toxin type A Pred: 'None of the provided'  Expected: DB00452
+  Q: MH_dev_81       Drug: Telmisartan          Pred: 'Based on the provide'  Expected: DB01109
+  Q: MH_dev_105      Drug: Afatinib             Pred: 'Based on the provide'  Expected: DB00864
+  Q: MH_dev_106      Drug: Eplerenone           Pred: 'Based on the provide'  Expected: DB08820
+  Q: MH_dev_121      Drug: Trandolapril         Pred: 'Based on the provide'  Expected: DB08907
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'Based on the provide' — 14 times
+  'DB00104' — 4 times
+  'DB00819' — 4 times
+  'DB00203' — 4 times
+  'DB00317' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: ov_ov-exp4_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — ov_ov-exp4_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 110 (32.2%)
+  Wrong/Failed    : 232 (67.8%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  232  (67.8%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :    0  (0.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_6        Drug: Mycophenolic acid    Pred: DB00136    Expected: DB01656    (Roflumilast)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00222' — 4 times
+  'DB00605' — 4 times
+  'DB00744' — 4 times
+  'DB04871' — 3 times
+  'DB00316' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+======================================================================
+
+
+File: ov_ov-exp5_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — ov_ov-exp5_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 57 (16.7%)
+  Wrong/Failed    : 285 (83.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  108  (31.6%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :  176  (51.5%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB00116    Expected: DB00338    (Omeprazole)
+  Q: MH_dev_24       Drug: Nabilone             Pred: DB00644    Expected: DB00368    (Norepinephrine)
+  Q: MH_dev_29       Drug: Belimumab            Pred: DB01269    Expected: DB09302    (Alirocumab)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_151      Drug: Levomilnacipran      Pred: '<think>
+Thinking Pro'  Expected: DB01238
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00563' — 4 times
+  'DB00877' — 4 times
+  'DB00203' — 4 times
+  'DB00472' — 3 times
+  'DB01238' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_combined_k3_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_combined_k3_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 69 (20.2%)
+  Wrong/Failed    : 273 (79.8%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  154  (45.0%)
+  Format Error    (name instead of DB ID)           :    2  (0.6%)
+  Hallucination   (DB ID not in candidates)         :  117  (34.2%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB08820    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_19       Drug: Dicoumarol           Pred: DB00134    Expected: DB01098    (Rosuvastatin)
+  Q: MH_dev_25       Drug: Belatacept           Pred: DB00086    Expected: DB06643    (Denosumab)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_26       Drug: Bicalutamide         Pred: 'Based on the provide'  Expected: DB00266
+  Q: MH_dev_308      Drug: Corticotropin        Pred: 'Based on the provide'  Expected: DB00682
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00501' — 5 times
+  'DB00563' — 4 times
+  'DB01238' — 3 times
+  'DB00472' — 3 times
+  'DB00682' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_expanded_k10_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_expanded_k10_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 44 (12.9%)
+  Wrong/Failed    : 298 (87.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  143  (41.8%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  155  (45.3%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01216    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05657    Expected: DB00619    (Imatinib)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_16       Drug: Aripiprazole         Pred: DB00988    Expected: DB06603    (Panobinostat)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00191' — 5 times
+  'DB00563' — 4 times
+  'DB00834' — 4 times
+  'DB00073' — 3 times
+  'DB00712' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_expanded_k10_fewshot_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_expanded_k10_fewshot_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 38 (11.1%)
+  Wrong/Failed    : 304 (88.9%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  145  (42.4%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  159  (46.5%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB00162    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB03516    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00104    Expected: DB00559    (Bosentan)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00203' — 6 times
+  'DB00563' — 4 times
+  'DB01120' — 4 times
+  'DB00031' — 4 times
+  'DB00459' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_expanded_k3_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_expanded_k3_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 67 (19.6%)
+  Wrong/Failed    : 275 (80.4%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  154  (45.0%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  121  (35.4%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB08820    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00530    Expected: DB00559    (Bosentan)
+  Q: MH_dev_9        Drug: Mexiletine           Pred: DB00279    Expected: DB00281    (Lidocaine)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00091' — 4 times
+  'DB00501' — 4 times
+  'DB00530' — 3 times
+  'DB00191' — 3 times
+  'DB06589' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_expanded_k3_fewshot_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_expanded_k3_fewshot_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 37 (10.8%)
+  Wrong/Failed    : 305 (89.2%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  115  (33.6%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  190  (55.6%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB08820    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00530    Expected: DB00559    (Bosentan)
+  Q: MH_dev_9        Drug: Mexiletine           Pred: DB00279    Expected: DB00281    (Lidocaine)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00563' — 4 times
+  'DB00203' — 4 times
+  'DB00015' — 4 times
+  'DB01285' — 4 times
+  'DB00530' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_expanded_k5_direct_myqwen_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_expanded_k5_direct_myqwen
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 53 (15.5%)
+  Wrong/Failed    : 289 (84.5%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  199  (58.2%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   89  (26.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB08820    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB01259    Expected: DB00065    (Infliximab)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00104    Expected: DB00559    (Bosentan)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_35       Drug: Docetaxel            Pred: 'P41134
+
+The provided'  Expected: DB09073
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB02527' — 6 times
+  'DB00191' — 4 times
+  'DB01285' — 4 times
+  'DB01259' — 3 times
+  'DB00603' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_expanded_k5_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_expanded_k5_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 40 (11.7%)
+  Wrong/Failed    : 302 (88.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  162  (47.4%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :  139  (40.6%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB08820    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00154    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01240    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB03516    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_183      Drug: Tetrabenazine        Pred: 'Based on the provide'  Expected: DB00898
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01238' — 4 times
+  'DB00316' — 4 times
+  'DB00215' — 4 times
+  'DB00819' — 3 times
+  'DB00472' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_expanded_k5_fewshot_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_expanded_k5_fewshot_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 48 (14.0%)
+  Wrong/Failed    : 294 (86.0%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  115  (33.6%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :  178  (52.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB04958    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00104    Expected: DB00559    (Bosentan)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB05262    Expected: DB00338    (Omeprazole)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_248      Drug: Aripiprazole         Pred: 'Based on the provide'  Expected: DB00030
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00472' — 4 times
+  'DB08815' — 4 times
+  'DB00563' — 3 times
+  'DB00104' — 3 times
+  'DB00203' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_gold_chain_k3_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_gold_chain_k3_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 263 (76.9%)
+  Wrong/Failed    : 79 (23.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :   39  (11.4%)
+  Format Error    (name instead of DB ID)           :    2  (0.6%)
+  Hallucination   (DB ID not in candidates)         :   38  (11.1%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB00162    Expected: DB00619    (Imatinib)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB08932    Expected: DB00559    (Bosentan)
+  Q: MH_dev_19       Drug: Dicoumarol           Pred: DB00134    Expected: DB01098    (Rosuvastatin)
+  Q: MH_dev_26       Drug: Bicalutamide         Pred: DB06616    Expected: DB00266    (Dicoumarol)
+  Q: MH_dev_55       Drug: Troglitazone         Pred: DB06589    Expected: DB01067    (Glipizide)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_63       Drug: Rifampin             Pred: '<think>
+The user wan'  Expected: DB08816
+  Q: MH_dev_191      Drug: Temsirolimus         Pred: 'Based on the provide'  Expected: DB00222
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB06616' — 2 times
+  'DB00073' — 2 times
+  'DB06589' — 2 times
+  'DB00007' — 2 times
+  'DB06684' — 2 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_gold_chain_k5_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_gold_chain_k5_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 229 (67.0%)
+  Wrong/Failed    : 113 (33.0%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :   50  (14.6%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :   63  (18.4%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB01216    Expected: DB01151    (Desipramine)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB08932    Expected: DB00559    (Bosentan)
+  Q: MH_dev_15       Drug: Cabozantinib         Pred: DB09026    Expected: DB08899    (Enzalutamide)
+  Q: MH_dev_19       Drug: Dicoumarol           Pred: DB00134    Expected: DB01098    (Rosuvastatin)
+  Q: MH_dev_26       Drug: Bicalutamide         Pred: DB06616    Expected: DB00266    (Dicoumarol)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00035' — 2 times
+  'DB09068' — 2 times
+  'DB06616' — 2 times
+  'DB00073' — 2 times
+  'DB00007' — 2 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_hybrid_scored_k3_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_hybrid_scored_k3_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 76 (22.2%)
+  Wrong/Failed    : 266 (77.8%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  164  (48.0%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :  101  (29.5%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_231      Drug: Aripiprazole         Pred: 'Based on the provide'  Expected: DB00898
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00203' — 4 times
+  'DB00191' — 4 times
+  'DB01050' — 4 times
+  'DB00834' — 4 times
+  'DB00215' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_hybrid_scored_k3_fewshot_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_hybrid_scored_k3_fewshot_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 41 (12.0%)
+  Wrong/Failed    : 301 (88.0%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :   97  (28.4%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  204  (59.6%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB05305    Expected: DB00338    (Omeprazole)
+  Q: MH_dev_22       Drug: Trastuzumab emtansine Pred: DB01030    Expected: DB01656    (Roflumilast)
+  Q: MH_dev_25       Drug: Belatacept           Pred: DB00086    Expected: DB06643    (Denosumab)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00472' — 4 times
+  'DB04868' — 4 times
+  'DB01656' — 4 times
+  'DB00316' — 3 times
+  'DB01238' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_hybrid_scored_k5_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_hybrid_scored_k5_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 59 (17.3%)
+  Wrong/Failed    : 283 (82.7%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  129  (37.7%)
+  Format Error    (name instead of DB ID)           :    2  (0.6%)
+  Hallucination   (DB ID not in candidates)         :  152  (44.4%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05657    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB00071    Expected: DB00338    (Omeprazole)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_263      Drug: Clopidogrel          Pred: 'Based on the provide'  Expected: DB01045
+  Q: MH_dev_288      Drug: Aripiprazole         Pred: 'Based on the provide'  Expected: DB00850
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01095' — 5 times
+  'DB00086' — 4 times
+  'DB01656' — 4 times
+  'DB06271' — 4 times
+  'DB01285' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_query_drug_k3_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_query_drug_k3_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 56 (16.4%)
+  Wrong/Failed    : 286 (83.6%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  167  (48.8%)
+  Format Error    (name instead of DB ID)           :    3  (0.9%)
+  Hallucination   (DB ID not in candidates)         :  116  (33.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB08820    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05657    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_26       Drug: Bicalutamide         Pred: '<think>
+The user wan'  Expected: DB00266
+  Q: MH_dev_108      Drug: Golimumab            Pred: 'Based on the provide'  Expected: DB00072
+  Q: MH_dev_324      Drug: Warfarin             Pred: 'Based on the provide'  Expected: DB00193
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB06589' — 4 times
+  'DB01238' — 3 times
+  'DB00784' — 3 times
+  'DB00227' — 3 times
+  'DB00203' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_query_drug_k5_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_query_drug_k5_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 39 (11.4%)
+  Wrong/Failed    : 303 (88.6%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  143  (41.8%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  160  (46.8%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB08820    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00154    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB04958    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01267' — 4 times
+  'DB00563' — 3 times
+  'DB06589' — 3 times
+  'DB00784' — 3 times
+  'DB01076' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_semantic_k5_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_semantic_k5_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 52 (15.2%)
+  Wrong/Failed    : 290 (84.8%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  153  (44.7%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  137  (40.1%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00154    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05657    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01095' — 5 times
+  'DB00563' — 4 times
+  'DB00086' — 4 times
+  'DB00031' — 4 times
+  'DB00580' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_weighted_struct_k3_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_weighted_struct_k3_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 62 (18.1%)
+  Wrong/Failed    : 280 (81.9%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  157  (45.9%)
+  Format Error    (name instead of DB ID)           :    2  (0.6%)
+  Hallucination   (DB ID not in candidates)         :  121  (35.4%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB08820    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00530    Expected: DB00559    (Bosentan)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_64       Drug: Afatinib             Pred: 'Based on the provide'  Expected: DB04905
+  Q: MH_dev_336      Drug: Nabilone             Pred: 'Based on the support'  Expected: DB00831
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01238' — 4 times
+  'DB06589' — 4 times
+  'DB02546' — 4 times
+  'DB00530' — 3 times
+  'DB01128' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase1_weighted_struct_k5_direct_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase1_weighted_struct_k5_direct_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 38 (11.1%)
+  Wrong/Failed    : 304 (88.9%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  161  (47.1%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  143  (41.8%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00154    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01240    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB03516    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00317' — 4 times
+  'DB00171' — 4 times
+  'DB00563' — 3 times
+  'DB00741' — 3 times
+  'DB06691' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase2_cot_enriched_hybrid_scored_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase2_cot_enriched_hybrid_scored_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 110 (32.2%)
+  Wrong/Failed    : 232 (67.8%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  198  (57.9%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   33  (9.6%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00125    Expected: DB00065    (Infliximab)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01221    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_297      Drug: Vilazodone           Pred: '<think>
+The user wan'  Expected: DB00850
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01076' — 4 times
+  'DB01050' — 4 times
+  'DB00317' — 3 times
+  'DB01281' — 3 times
+  'DB00563' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase2_dual_retrieval_hybrid_scored_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase2_dual_retrieval_hybrid_scored_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 59 (17.3%)
+  Wrong/Failed    : 283 (82.7%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  126  (36.8%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :  156  (45.6%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00154    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01221    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+  Q: MH_dev_15       Drug: Cabozantinib         Pred: DB00203    Expected: DB08899    (Enzalutamide)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_308      Drug: Corticotropin        Pred: 'Based on the provide'  Expected: DB00682
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00203' — 4 times
+  'DB00215' — 4 times
+  'DB01238' — 3 times
+  'DB00191' — 3 times
+  'DB00341' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase2_enriched_hybrid_scored_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase2_enriched_hybrid_scored_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 83 (24.3%)
+  Wrong/Failed    : 259 (75.7%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  153  (44.7%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :  106  (31.0%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05657    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB00071    Expected: DB00338    (Omeprazole)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00203' — 5 times
+  'DB01285' — 4 times
+  'DB00501' — 4 times
+  'DB00104' — 4 times
+  'DB00452' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase2_forced_reasoning_hybrid_scored_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase2_forced_reasoning_hybrid_scored_k3_qwen3_5-9
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 57 (16.7%)
+  Wrong/Failed    : 285 (83.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  140  (40.9%)
+  Format Error    (name instead of DB ID)           :   60  (17.5%)
+  Hallucination   (DB ID not in candidates)         :   85  (24.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00154    Expected: DB01151    (Desipramine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB00162    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00104    Expected: DB00559    (Bosentan)
+  Q: MH_dev_13       Drug: Glipizide            Pred: DB05366    Expected: DB00501    (Cimetidine)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: 'Here is the step-by-'  Expected: DB04844
+  Q: MH_dev_1        Drug: Methotrexate         Pred: 'Here is the step-by-'  Expected: DB00065
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: 'Here is the step-by-'  Expected: DB06695
+  Q: MH_dev_12       Drug: Sulpiride            Pred: 'Here is the step-by-'  Expected: DB00831
+  Q: MH_dev_25       Drug: Belatacept           Pred: 'Here is the step-by-'  Expected: DB06643
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'Here is the step-by-' — 49 times
+  'Step 1 - Mechanism a' — 11 times
+  'DB00203' — 5 times
+  'DB00191' — 3 times
+  'DB00208' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> High Format Error rate — model outputs names instead of DB IDs
+     Fix: Reinforce DBxxxxx format instruction in prompt
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase2_guided_retrieval_hybrid_scored_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase2_guided_retrieval_hybrid_scored_k3_qwen3_5-9
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 114 (33.3%)
+  Wrong/Failed    : 228 (66.7%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  200  (58.5%)
+  Format Error    (name instead of DB ID)           :    1  (0.3%)
+  Hallucination   (DB ID not in candidates)         :   27  (7.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00495    Expected: DB00605    (Sulindac)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_297      Drug: Vilazodone           Pred: '<think>
+The user wan'  Expected: DB00850
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00104' — 5 times
+  'DB00819' — 4 times
+  'DB00744' — 4 times
+  'DB00452' — 3 times
+  'DB00191' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase2_guided_retrieval_hybrid_scored_k5_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase2_guided_retrieval_hybrid_scored_k5_qwen3_5-9
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 91 (26.6%)
+  Wrong/Failed    : 251 (73.4%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  207  (60.5%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :   44  (12.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00104    Expected: DB00559    (Bosentan)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00104' — 5 times
+  'DB00203' — 5 times
+  'DB00191' — 4 times
+  'DB00563' — 4 times
+  'DB01656' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: phase2_reranked_hybrid_scored_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — phase2_reranked_hybrid_scored_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 85 (24.9%)
+  Wrong/Failed    : 257 (75.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  213  (62.3%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :   44  (12.9%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB05876    Expected: DB00619    (Imatinib)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00104    Expected: DB00559    (Bosentan)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00104' — 5 times
+  'DB00222' — 4 times
+  'DB00580' — 3 times
+  'DB00452' — 3 times
+  'DB00191' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: qd_qd-exp1_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — qd_qd-exp1_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 81 (23.7%)
+  Wrong/Failed    : 261 (76.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  172  (50.3%)
+  Format Error    (name instead of DB ID)           :   10  (2.9%)
+  Hallucination   (DB ID not in candidates)         :   79  (23.1%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB01221    Expected: DB00619    (Imatinib)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB05341    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00530    Expected: DB00559    (Bosentan)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_11       Drug: Desmopressin         Pred: 'Based on the support'  Expected: DB00328
+  Q: MH_dev_59       Drug: Theophylline         Pred: '<think>
+The user wan'  Expected: DB00668
+  Q: MH_dev_101      Drug: Panobinostat         Pred: '<think>
+Thinking Pro'  Expected: DB01197
+  Q: MH_dev_110      Drug: Dronabinol           Pred: '<think>
+Thinking Pro'  Expected: DB00422
+  Q: MH_dev_165      Drug: Sunitinib            Pred: 'None of the provided'  Expected: DB00912
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  '<think>
+The user wan' — 5 times
+  'DB00563' — 4 times
+  'DB00316' — 4 times
+  'DB01259' — 3 times
+  'DB00191' — 3 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: qd_qd-exp2_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — qd_qd-exp2_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 47 (13.7%)
+  Wrong/Failed    : 295 (86.3%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  114  (33.3%)
+  Format Error    (name instead of DB ID)           :   39  (11.4%)
+  Hallucination   (DB ID not in candidates)         :  142  (41.5%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_3        Drug: Lurasidone           Pred: DB00162    Expected: DB00619    (Imatinib)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00580    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB00530    Expected: DB00559    (Bosentan)
+  Q: MH_dev_10       Drug: Alendronic acid      Pred: DB00071    Expected: DB00338    (Omeprazole)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_17       Drug: Framycetin           Pred: '<think>
+Thinking Pro'  Expected: DB00784
+  Q: MH_dev_26       Drug: Bicalutamide         Pred: 'Based on the provide'  Expected: DB00266
+  Q: MH_dev_31       Drug: Amrinone             Pred: '<think>
+Thinking Pro'  Expected: DB00501
+  Q: MH_dev_43       Drug: Secukinumab          Pred: '<think>
+Thinking Pro'  Expected: DB00864
+  Q: MH_dev_49       Drug: Rasagiline           Pred: 'None of the provided'  Expected: DB00391
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  '<think>
+Thinking Pro' — 34 times
+  'DB00015' — 5 times
+  'Based on the provide' — 4 times
+  'DB00877' — 4 times
+  'DB01109' — 4 times
+
+  ── Key Observations ──────────────────────────────────
+  -> High Format Error rate — model outputs names instead of DB IDs
+     Fix: Reinforce DBxxxxx format instruction in prompt
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+
+
+File: qd_qd-exp3_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — qd_qd-exp3_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 93 (27.2%)
+  Wrong/Failed    : 249 (72.8%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  245  (71.6%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :    4  (1.2%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00125    Expected: DB00065    (Infliximab)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00588    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_6        Drug: Mycophenolic acid    Pred: DB00174    Expected: DB01656    (Roflumilast)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00316' — 5 times
+  'DB00175' — 5 times
+  'DB00222' — 5 times
+  'DB00605' — 5 times
+  'DB00104' — 5 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+======================================================================
+
+
+File: qd_qd-exp4a_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — qd_qd-exp4a_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 97 (28.4%)
+  Wrong/Failed    : 245 (71.6%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  239  (69.9%)
+  Format Error    (name instead of DB ID)           :    0  (0.0%)
+  Hallucination   (DB ID not in candidates)         :    6  (1.8%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB01656    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_1        Drug: Methotrexate         Pred: DB00133    Expected: DB00065    (Infliximab)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_6        Drug: Mycophenolic acid    Pred: DB00174    Expected: DB01656    (Roflumilast)
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00316' — 5 times
+  'DB00313' — 5 times
+  'DB00175' — 5 times
+  'DB00222' — 5 times
+  'DB00104' — 5 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+======================================================================
+
+
+File: qd_qd-exp5_k3_qwen3_5-9b_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — qd_qd-exp5_k3_qwen3_5-9b
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 82 (24.0%)
+  Wrong/Failed    : 260 (76.0%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  252  (73.7%)
+  Format Error    (name instead of DB ID)           :    4  (1.2%)
+  Hallucination   (DB ID not in candidates)         :    4  (1.2%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB00786    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_2        Drug: Fluoxetine           Pred: DB00154    Expected: DB01151    (Desipramine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB00461    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB00316    Expected: DB00605    (Sulindac)
+  Q: MH_dev_6        Drug: Mycophenolic acid    Pred: DB00136    Expected: DB01656    (Roflumilast)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_133      Drug: Rituximab            Pred: 'Based on the evidenc'  Expected: DB00072
+  Q: MH_dev_138      Drug: Pitavastatin         Pred: 'Based on the evidenc'  Expected: DB01211
+  Q: MH_dev_153      Drug: Exenatide            Pred: 'Based on the evidenc'  Expected: DB00266
+  Q: MH_dev_251      Drug: Ibrutinib            Pred: 'Based on the provide'  Expected: DB00945
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB00009' — 8 times
+  'DB00031' — 8 times
+  'DB00191' — 7 times
+  'DB00203' — 6 times
+  'DB00175' — 6 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+======================================================================
+
+
+File: stage4_entity_bridge_predictions.json
+
+======================================================================
+  ERROR ANALYSIS REPORT — stage4_entity_bridge
+======================================================================
+  Total questions : 342
+  Correct (EM=1)  : 44 (12.9%)
+  Wrong/Failed    : 298 (87.1%)
+
+  ── Error Breakdown ──────────────────────────────────
+  Wrong Candidate (chose wrong from list)           :  170  (49.7%)
+  Format Error    (name instead of DB ID)           :    4  (1.2%)
+  Hallucination   (DB ID not in candidates)         :  124  (36.3%)
+  Empty Output    (no answer produced)              :    0  (0.0%)
+  API/Model Failure                                 :    0  (0.0%)
+
+  ── Wrong Candidate Examples (up to 5) ───────────────
+  Q: MH_dev_0        Drug: Moclobemide          Pred: DB04871    Expected: DB04844    (Tetrabenazine)
+  Q: MH_dev_4        Drug: Ethinylestradiol     Pred: DB04958    Expected: DB00677    (Isoflurophate)
+  Q: MH_dev_5        Drug: Pemetrexed           Pred: DB01406    Expected: DB00605    (Sulindac)
+  Q: MH_dev_7        Drug: Ibuprofen            Pred: DB00004    Expected: DB06695    (Dabigatran etexilate)
+  Q: MH_dev_8        Drug: Estradiol            Pred: DB08932    Expected: DB00559    (Bosentan)
+
+  ── Format Error Examples (up to 5) ──────────────────
+  Q: MH_dev_11       Drug: Desmopressin         Pred: 'DB0035'  Expected: DB00328
+  Q: MH_dev_80       Drug: Ipilimumab           Pred: '[10, 20, 30, 40, 50,'  Expected: DB08881
+  Q: MH_dev_131      Drug: Cyclosporine         Pred: 'Cyclosporine is a dr'  Expected: DB06287
+  Q: MH_dev_281      Drug: Paliperidone         Pred: 'DB0734'  Expected: DB00734
+
+  ── Most Common Wrong Predictions (top 5) ────────────
+  'DB01285' — 7 times
+  'DB01151' — 7 times
+  'DB01656' — 7 times
+  'DB01259' — 6 times
+  'DB01296' — 5 times
+
+  ── Key Observations ──────────────────────────────────
+  -> Primary error: Wrong Candidate selection from list
+     Likely cause: Retrieved docs lack sufficient evidence (retrieval gap)
+  -> Model generates IDs not in candidate list — extraction issue
+======================================================================
+

@@ -1,0 +1,103 @@
+==============================================================================================================
+  ── Reference Papers (BioCreative IX MedHop Track 2025) ──
+  System                                           Strict EM%  Notes
+  ─────────────────────────────────────────────────────────────────────────────────────────────────────────
+  DMIS Lab (Rank 1, BioCreative IX)                     87.3%  GPT-4o + MedCPT + Web Search
+  UETQuintet (Rank 2, BioCreative IX)                   83.8%  GPT-4o-mini + Wikipedia
+  NHSRAG (PreceptorAI)                                  73.4%  MedReason-8B + Wikipedia (spaCy NER)
+  Fluxion (Advanced Prompting)                          68.1%  Gemini 2.0/2.5 Flash — No RAG
+  CLaC (Agentic SmolAgents)                             67.6%  Qwen2.5-Coder-32B + Wikipedia + PubMed
+  Orekhovich (local Ollama)                             43.9%  Llama3-Med42-8B + BM25S + MedEmbed
+  lasigeBioTM                                           28.3%  Mistral-7B + Mondo Ontology
+  DeepRAG (BioHop)                                      20.7%  DeepSeek R1 + Wikipedia + DPO
+  CaresAI (fine-tuned LLaMA-3 8B)                       18.6%  LoRA fine-tuning on BioASQ/MedQuAD
+
+  ── Our Experiments ──
+  Strict EM%  Lenient EM%      n  fail  Model                                Retriever     Prompt        K  Note   Concept%
+  ──────────────────────────────────────────────────────────────────────────────────────────────────────────────
+       76.9%        76.9%    342     0  qwen3.5-9b                           gold_chain    direct        3  [ORACLE — upper bound only, not a production result]      76.9%
+       67.0%        67.0%    342     0  qwen3.5-9b                           gold_chain    direct        5  [ORACLE — upper bound only, not a production result]      67.0%
+       46.0%        46.0%     50     0  qwen/qwen3.6-plus-preview:free       Expanded      zero-shot     5  [50q — partial/test run, NOT comparable to full 342q]      46.0%
+       39.8%        39.8%    342     0  openai/gpt-oss-120b:free             hybrid_bridg  guided        3        39.8%
+       33.3%        33.3%    342     0  qwen3.5-9b                           hybrid_score  guided        3        33.3%
+       33.3%        33.3%    342     0  qwen3.5-9b                           hybrid_score  phase2_gui    3        33.3%
+       32.2%        32.2%    342     0  qwen3.5-9b                           hybrid_score  guided        3        32.2%
+       32.2%        32.2%    342     0  qwen3.5-9b                           Int.Supports  conservati    3        32.2%
+       32.2%        32.2%    342     0  qwen3.5-9b                           hybrid_score  phase2_cot    3        32.2%
+       32.0%        39.0%     41     9  openrouter/free                      Expanded      zero-shot     5  [50q — partial/test run, NOT comparable to full 342q]      32.0%
+       31.9%        31.9%    342     0  qwen3.5-9b                           Combined      zero-shot     ?        31.9%
+       31.3%        31.3%    342     0  qwen3.5-9b                           ?             zero-shot     ?        31.3%
+       28.9%        28.9%    342     0  qwen3.5-9b                           ?             zero-shot     ?        28.9%
+       28.4%        28.4%    342     0  qwen3.5-9b                           Hybrid        qd_guided     3        28.4%
+       27.8%        27.8%    342     0  qwen3.5-9b                           hybrid_score  bridge_piv    3        27.8%
+       27.8%        27.8%    342     0  qwen3.5-9b                           Int.Supports  bridge_ref    3        27.8%
+       27.2%        27.2%    342     0  qwen3.5-9b                           Hybrid        qd_candfil    3        27.2%
+       26.9%        26.9%    342     0  qwen3.5-9b                           hybrid_score  cand_filte    3        26.9%
+       26.6%        26.6%    342     0  qwen3.5-9b                           hybrid_score  phase2_gui    5        26.6%
+       25.7%        25.8%    341     1  qwen3.5-9b                           ?             zero-shot     3        25.7%
+       25.1%        25.5%    337     5  qwen3.5-9b                           ?             zero-shot     3        25.1%
+       24.9%        25.1%    339     3  qwen3.5-9b                           ?             zero-shot     3        24.9%
+       24.9%        24.9%    342     0  qwen3.5-9b                           hybrid_score  phase2_rer    3        24.9%
+       24.3%        24.3%    342     0  qwen3.5-9b                           hybrid_score  phase2_enr    3        24.3%
+       24.0%        24.0%    342     0  qwen3.5-9b                           Hybrid        qd_per_can    3        24.0%
+       23.7%        23.7%    342     0  qwen3.5-9b                           Hybrid        qd_hop2onl    3        23.7%
+       22.2%        22.2%    342     0  qwen3.5-9b                           hybrid_score  direct        3        22.2%
+       21.9%        22.4%    335     7  qwen3.5-9b                           ?             zero-shot     3        21.9%
+       20.5%        20.5%    342     0  qwen3.5-9b                           Int.Supports  consistenc    3        20.5%
+       20.2%        20.2%    342     0  qwen3.5-9b                           combined      direct        3        20.2%
+       19.6%        19.6%    342     0  qwen3.5-9b                           Expanded      direct        3        19.6%
+       18.1%        18.1%    342     0  qwen3.5-9b                           weighted_str  direct        3        18.1%
+       17.2%        17.2%    342     0  qwen3.5-9b                           hybrid_score  direct        5        17.2%
+       17.2%        17.2%    342     0  qwen3.5-9b                           hybrid_score  phase2_dua    3        17.2%
+       16.7%        16.7%    342     0  qwen3.5-9b                           Int.Supports  support_re    3        16.7%
+       16.7%        16.7%    342     0  qwen3.5-9b                           Int.Supports  supp_hints    3        16.7%
+       16.7%        16.7%    342     0  qwen3.5-9b                           hybrid_score  phase2_for    3        16.7%
+       16.4%        16.4%    342     0  unknown                              MedCPT        zero-shot     5        16.4%
+       16.4%        16.4%    342     0  qwen3.5-9b                           query_drug    direct        3        16.4%
+       15.8%        15.8%    342     0  unknown                              None          fewshot       ?        15.8%
+       15.5%        15.5%    342     0  unknown                              None          zero-shot     ?        15.5%
+       15.5%        15.5%    342     0  myqwen                               Expanded      direct        5        15.5%
+       15.2%        15.2%    342     0  qwen3.5-9b                           MedCPT        direct        5        15.2%
+       14.6%        14.6%    342     0  unknown                              None          CoT           ?        14.6%
+       14.0%        14.0%    342     0  unknown                              None          fewshot       ?        14.0%
+       14.0%        14.0%    342     0  unknown                              None          zero-shot     ?        14.0%
+       14.0%        14.0%    342     0  qwen3.5-9b                           Expanded      fewshot       5        14.0%
+       13.7%        13.7%    342     0  unknown                              None          zero-shot     ?        13.7%
+       13.7%        13.7%    342     0  qwen3.5-9b                           Hybrid        qd_ircot      3        13.7%
+       13.2%        13.2%    342     0  unknown                              Hybrid        zero-shot     5        13.2%
+       12.9%        12.9%    342     0  unknown                              MedCPT        fewshot_wi    5        12.9%
+       12.9%        12.9%    342     0  unknown                              Hybrid        zero-shot     5        12.9%
+       12.9%        12.9%    342     0  qwen3.5-9b                           Expanded      direct       10        12.9%
+       12.9%        12.9%    342     0  unknown                              Bridge        entity_bri    ?        12.9%
+       12.3%        12.3%    342     0  unknown                              BM25          zero-shot    10        12.3%
+       12.3%        12.3%    342     0  unknown                              MedCPT        zero-shot     ?        12.3%
+       12.0%        12.0%    342     0  qwen3.5-9b                           hybrid_score  fewshot       3        12.0%
+       11.7%        11.7%    342     0  unknown                              BM25          zero-shot     5        11.7%
+       11.7%        11.8%    340     2  unknown                              BM25          zero-shot     ?        11.7%
+       11.7%        11.7%    342     0  qwen3.5-9b                           expanded      direct        5        11.7%
+       11.4%        11.4%    342     0  unknown                              BM25          zero-shot     3        11.4%
+       11.4%        11.4%    342     0  qwen3.5-9b                           query_drug    direct        5        11.4%
+       11.1%        11.1%    342     0  qwen3.5-9b                           Expanded      fewshot      10        11.1%
+       11.1%        11.1%    342     0  qwen3.5-9b                           weighted_str  direct        5        11.1%
+       10.8%        10.8%    342     0  qwen3.5-9b                           Expanded      fewshot       3        10.8%
+        9.9%         9.9%    342     0  unknown                              MedCPT        zero-shot    10         9.9%
+        8.8%         8.8%    342     0  unknown                              MedCPT        zero-shot    20         8.8%
+        8.2%         8.2%    342     0  qwen3.5-9b                           hybrid_score  decomp_2ho    3         8.2%
+        6.1%         6.1%    342     0  unknown                              BM25          zero-shot    20         6.1%
+
+==============================================================================================================
+  Oracle upper bound (gold_chain):         76.9%  [ORACLE — not comparable to papers, included for reference only]
+  Best Strict EM%  — production (342q):    39.8%  [openai/gpt-oss-120b:free / hybrid_bridge_boosted / guided]
+  Best Lenient EM% — production (342q):    39.8%
+  Gap to oracle:                            37.1pp
+
+  NOTE: 2 partial/test run(s) shown above are NOT comparable to full 342q results.
+  A 100% on 3 questions ≠ 100% on 342 questions.
+
+  ── Metric Definitions ──────────────────────────────────────────────
+  Strict EM%  : correct / total        — official BioCreative IX metric
+  Lenient EM% : correct / answered     — excludes API/connection failures
+  Concept%    : Strict EM + Format Errors that were conceptually correct (diagnostic only)
+                In our system Concept ≈ Strict EM (model outputs DB IDs directly)
+  NM (Name Match): NOT a research metric — internal diagnostic indicator only
+==============================================================================================================

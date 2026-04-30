@@ -23,8 +23,14 @@ models/*.pt
 config/secrets.py
 config/.env
 
-# Outputs (generated data - not source code)
-outputs/
+# Outputs (ignore transient artifacts, keep evaluation reports)
+outputs/*_predictions.json
+outputs/*_logs.json
+outputs/*_cache.json
+outputs/bridge_cache.json
+outputs/wikipedia_cache.json
+outputs/wikipedia_v2_cache.json
+outputs/expansion_cache.json
 
 # Data files (large)
 data/qangaroo_v1.1/
@@ -48,7 +54,6 @@ desktop.ini
 # Project-specific artifacts and sensitive data
 *.gguf
 *.safetensors
-outputs/
 data/qangaroo_v1.1/
 data/*.gz
 data/edges.sif
