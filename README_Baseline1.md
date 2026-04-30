@@ -56,27 +56,22 @@ Answer with the DrugBank ID only (format: DBxxxxx).
 Answer:
 ```
 
-### Results
-| Metric | Score |
-|--------|-------|
-| **Exact Match (EM)** | **13.74%** |
-| Random Baseline | 11.63% |
-| Above Random | +2.11% |
-| Total Questions | 342 |
-| Correct | 47 |
-| Wrong | 295 |
-| Failed | 0 |
-| Avg Inference Time | 0.42 sec/question |
-| Total Runtime | 2.4 minutes |
+### Results — Prompt Ablation Study
+| Prompt Style | EM (%) | Correct / 342 |
+|-------------|--------|--------------|
+| Zero-shot (direct) | 13.74% | 47 |
+| Chain-of-Thought | 14.6% | 50 |
+| Few-shot (temp=0) | 14.0% | 48 |
+| **Few-shot** | **15.8%** | **54** |
 
-### Error Analysis
-| Metric | Value |
-|--------|-------|
-| Valid but wrong predictions | 240 (81.4%) |
-| Top missed answer | DB00850, DB00946, DB08820 (7× each) |
+> **Best result: 15.8% EM (few-shot prompt)**
+> Random baseline: 11.63% (+4.17pp above random)
 
 ### Key Finding
-> BioMistral-7B without retrieval achieves **13.74% EM** — only **2.11% above random baseline (11.63%)** — demonstrating that parametric knowledge alone is insufficient for multi-hop biomedical drug interaction QA. This establishes the motivation for retrieval-augmented approaches in subsequent stages.
+> BioMistral-7B without retrieval achieves at most **15.8% EM** —
+> only **~4pp above random baseline (11.63%)**. Parametric knowledge
+> alone is insufficient for multi-hop drug interaction QA.
+> This motivates the retrieval-augmented approaches in subsequent stages.
 
 ### How to Run
 ```bash
