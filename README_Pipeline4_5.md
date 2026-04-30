@@ -88,15 +88,19 @@ Question
 ---
 
 ### Progress Summary
-| Stage | Best EM (%) | Δ vs Previous |
-|-------|------------|---------------|
-| Baseline 1 (BioMistral, no RAG) | 15.8% | — |
-| Baseline 2 (BM25) | 12.3% | −3.5pp |
+| Stage | Best EM (%) | Delta vs Previous |
+|-------|------------|-------------------|
+| Baseline 1 (BioMistral, no RAG) | 15.8% | -- |
+| Baseline 2 (BM25) | 12.3% | -3.5pp |
 | Baseline 3 (Dense MedCPT) | 16.4% | +0.6pp |
 | **Pipeline 4-5 (Hybrid + Qwen3.5-9B)** | **33.3%** | **+16.9pp** |
+| Advanced Features (Entity Bridging / Ontology) | 33.3% / 32.2% | 0.0pp / -1.1pp |
+| **Ensemble (Majority Vote, 3-way)** | **35.4%** | **+2.1pp** |
 
 > Switching to Qwen3.5-9B + hybrid retrieval + guided prompting
 > delivers a **+16.9pp improvement** — the largest single gain in the project.
+> The final ensemble (35.4%) closes 2.1pp more by combining complementary
+> prompt strategies via majority voting.
 
 ---
 
