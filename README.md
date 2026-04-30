@@ -125,7 +125,7 @@ Query decomposition (28.4%), ontology verification (32.2%), and entity bridging 
 **5. 43.6pp gap to oracle upper bound (single model), reduced to 41.5pp with ensemble**
 Oracle (gold-chain) retrieval achieves 76.9%. The gap to our best single model (33.3%) is almost entirely an evidence retrieval problem — the LLM can reason correctly given perfect context. The ensemble (35.4%) closes 2.1pp of this gap by leveraging complementary errors across prompt strategies.
 
-**6. Ensemble majority voting improves over any single configuration (+2.05pp)**
+**6. Ensemble majority voting improves over any single configuration (+2.1pp)**
 Three-way majority voting across guided, conservative-ontology, and candidate-aware configurations achieves 35.4% EM — 7 additional correct answers over the best single model. 70.5% of questions receive unanimous agreement, confirming that the three strategies largely agree but make complementary errors on the remaining 29.5%.
 
 ---
