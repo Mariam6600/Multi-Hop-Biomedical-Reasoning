@@ -180,7 +180,7 @@ def run_inference_step(data: list, max_questions: int = None):
         print(f"  [INFO] Limited to {max_questions} questions")
 
     # Import and run pipeline
-    from src.inference_pipeline import (
+    from src.inference_pipeline1 import (
         load_existing_predictions,
         save_predictions,
         save_logs,
