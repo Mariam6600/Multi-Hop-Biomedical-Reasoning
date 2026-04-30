@@ -144,6 +144,9 @@ def load_medhop(dataset_path: str, vocab: dict, max_questions: int = None) -> li
         if query_drug_id and query_drug_name == query_drug_id:
             missing_vocab += 1
 
+        # Extract supports (needed for Baseline 2 BM25 retrieval)
+        supports = record.get("supports", [])
+
         normalized.append({
             "id":              question_id,
             "query":           query,
@@ -153,6 +156,8 @@ def load_medhop(dataset_path: str, vocab: dict, max_questions: int = None) -> li
             "candidate_names": candidate_names,
             "answer":          answer,
             "answer_name":     answer_name,
+            "supports":        supports,
+            "supports_count":  len(supports),
         })
 
     if missing_vocab > 0:
@@ -196,11 +201,17 @@ def print_statistics(data: list):
     # Count unique answer drugs
     unique_answers = set(r["answer"] for r in data)
 
+    # Supports stats
+    supports_counts = [r.get("supports_count", 0) for r in data]
+    avg_supports = sum(supports_counts) / total if total > 0 else 0
+
     print(f"  [INFO] Total questions     : {total:,}")
     print(f"  [INFO] Unique answers      : {len(unique_answers):,}")
     print(f"  [INFO] Avg candidates/q    : {avg_candidates:.1f}")
     print(f"  [INFO] Min candidates/q    : {min_candidates}")
     print(f"  [INFO] Max candidates/q    : {max_candidates}")
+    print(f"  [INFO] Avg supports/q      : {avg_supports:.1f}")
+    print(f"  [INFO] Supports loaded     : {'YES' if avg_supports > 0 else 'NO - check dataset'}")
 
     # Show first 3 examples
     print()

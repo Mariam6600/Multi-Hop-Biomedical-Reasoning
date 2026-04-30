@@ -44,3 +44,26 @@ desktop.ini
 
 # Anaconda
 .conda/
+
+# Project-specific artifacts and sensitive data
+*.gguf
+*.safetensors
+outputs/
+data/qangaroo_v1.1/
+data/*.gz
+data/edges.sif
+data/similarity-slim.tsv
+data/proteins.tsv
+data/medhop.json
+data/knowledge_base.json
+*.zip
+*.part
+ablation study results/
+models/BioMistral-7B.Q4_K_M.gguf
+models/Qwen2.5-7B-Instruct-Q4_K_M.gguf
+models/Qwen3.5-9B-Q4_K_M_2.gguf
+models/MedCPT-Query-Encoder/model.safetensors
+bridge_cache.json
+wikipedia_cache.json
+wikipedia_v2_cache.json
+expansion_cache.json

@@ -1,141 +1,214 @@
 """
 config/settings.py
-===================
-Biomedical Multi-Hop QA Project — Baseline 1
-Central configuration file.
+==================
+Biomedical Multi-Hop QA Project
+يدعم: ollama (محلي) | huggingface | groq | openrouter
 
-All other modules import their settings from here.
-To change any setting, edit ONLY this file.
+النماذج المحلية المتوفرة في models/:
+  - qwen2.5-7b   ← Qwen2.5-7B-Instruct-Q4_K_M.gguf   (القديم)
+  - qwen3.5-9b   ← Qwen3.5-9B-Q4_K_M_2.gguf           (الجديد)
+
+للتبديل بين النماذج المحلية: غيّر OLLAMA_ACTIVE_MODEL فقط
+
+الإعداد الأمني:
+  API keys محفوظة في ملف .env (لا يُرفع على GitHub)
+  أنشئ ملف .env من .env.example وضع مفاتيحك الحقيقية فيه
 """
 
 import os
+from pathlib import Path
 
 # ─────────────────────────────────────────────
-# PROJECT PATHS
+# LOAD .env FILE (python-dotenv)
+# ─────────────────────────────────────────────
+try:
+    from dotenv import load_dotenv
+    _env_path = Path(__file__).parent.parent / ".env"
+    load_dotenv(dotenv_path=r"C:\Users\LOQ\Desktop\Graduation Project2\Code Files\.env")
+except ImportError:
+    print("[WARN] python-dotenv not installed. Run: pip install python-dotenv")
+
+# ─────────────────────────────────────────────
+# PROJECT ROOT
 # ─────────────────────────────────────────────
 
-# Root of the project (Code Files folder)
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-# Subfolders
 DATA_DIR    = os.path.join(PROJECT_ROOT, "data")
 OUTPUTS_DIR = os.path.join(PROJECT_ROOT, "outputs")
-MODELS_DIR  = os.path.join(PROJECT_ROOT, "models")
+CONFIG_DIR  = os.path.join(PROJECT_ROOT, "config")
 SRC_DIR     = os.path.join(PROJECT_ROOT, "src")
+MODELS_DIR  = os.path.join(PROJECT_ROOT, "models")
 
 # ─────────────────────────────────────────────
-# DATASET PATHS (actual paths on this machine)
+# DATASET PATHS
 # ─────────────────────────────────────────────
 
-# Root of the QAnGaroo dataset
-QANGAROO_DIR = os.path.join(DATA_DIR, "qangaroo_v1.1", "qangaroo_v1.1")
-
-# MedHop folder
-MEDHOP_DIR = os.path.join(QANGAROO_DIR, "medhop")
-
-# MedHop split files
-MEDHOP_TRAIN        = os.path.join(MEDHOP_DIR, "train.json")
-MEDHOP_DEV          = os.path.join(MEDHOP_DIR, "dev.json")
-MEDHOP_TRAIN_MASKED = os.path.join(MEDHOP_DIR, "train.masked.json")
-MEDHOP_DEV_MASKED   = os.path.join(MEDHOP_DIR, "dev.masked.json")
-
-# Active split used in Baseline 1
-# Options: MEDHOP_TRAIN | MEDHOP_DEV | MEDHOP_TRAIN_MASKED | MEDHOP_DEV_MASKED
+MEDHOP_TRAIN   = os.path.join(DATA_DIR, "qangaroo_v1.1", "qangaroo_v1.1", "medhop", "train.json")
+MEDHOP_DEV     = os.path.join(DATA_DIR, "qangaroo_v1.1", "qangaroo_v1.1", "medhop", "dev.json")
 ACTIVE_DATASET = MEDHOP_DEV
 
-# DrugBank vocabulary (drug ID -> drug name mapping)
-DRUGBANK_VOCAB = os.path.join(
-    DATA_DIR,
-    "drugbank_all_drugbank_vocabulary.csv",
-    "drugbank vocabulary.csv"
-)
-
-# Output JSON (processed dataset used by the pipeline)
-MEDHOP_FILE = os.path.join(DATA_DIR, "medhop.json")
-
-# Number of questions to process (None = all questions)
-# Set a small number like 10 for quick testing
-MAX_QUESTIONS = None
+MEDHOP_FILE    = os.path.join(DATA_DIR, "medhop.json")
+DRUGBANK_VOCAB = os.path.join(DATA_DIR, "drugbank_all_drugbank_vocabulary.csv", "drugbank vocabulary.csv")
 
 # ─────────────────────────────────────────────
-# LLM SETTINGS
+# LOCAL MODELS (Ollama)
 # ─────────────────────────────────────────────
 
-# Ollama model name (registered in EnvironmentSetup.py)
-OLLAMA_MODEL = "biomistral-7b"
+OLLAMA_ACTIVE_MODEL = "qwen3.5-9b"   # <- "qwen2.5-7b" | "qwen3.5-9b"
 
-# Ollama API base URL
-OLLAMA_HOST = "http://localhost:11434"
+OLLAMA_MODELS = {
+    "qwen2.5-7b": {
+        "name":      "qwen2.5-7b",
+        "modelfile": "Modelfile-qwen",
+        "gguf":      "Qwen2.5-7B-Instruct-Q4_K_M.gguf",
+    },
+    "qwen3.5-9b": {
+        "name":      "qwen3.5-9b",
+        "modelfile": "Modelfile-qwen3.5",
+        "gguf":      "Qwen3.5-9B-Q4_K_M_2.gguf",
+    },
+}
 
-# Generation parameters
-LLM_TEMPERATURE = 0.1   # Low = more focused, factual answers
+OLLAMA_HOST       = "http://localhost:11434"
+OLLAMA_MODEL_NAME = OLLAMA_MODELS[OLLAMA_ACTIVE_MODEL]["name"]
+OLLAMA_MODEL      = OLLAMA_MODEL_NAME
+
+LLM_TEMPERATURE = 0.1
 LLM_TOP_P       = 0.9
 LLM_TOP_K       = 40
-LLM_MAX_TOKENS  = 200   # Short answers for QA task
-LLM_NUM_CTX     = 2048  # Context window size
+LLM_MAX_TOKENS  = 200
+LLM_NUM_CTX     = 4096
 
 # ─────────────────────────────────────────────
-# PROMPT SETTINGS
+# API PROVIDERS — keys loaded from .env
 # ─────────────────────────────────────────────
 
-PROMPT_TEMPLATE = """You are a biomedical expert.
+# المفاتيح تُقرأ من .env — لا تكتبها هنا أبداً
+HF_API_KEY         = os.getenv("HF_API_KEY", "")
+HF_MODEL           = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"
 
-Question: {question}
+GROQ_API_KEY       = os.getenv("GROQ_API_KEY", "")
+GROQ_MODEL         = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"  #qwen/qwen3-32b  *llama-3.3-70b-versatile *deepseek-r1-distill-llama-70b
 
-Provide a short factual answer in 1-2 sentences."""
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+OPENROUTER_MODEL   = "openrouter/free"  #qwen/qwen3.6-flash *nvidia/nemotron-3-super-120b-a12b:free *openai/gpt-oss-120b:free
+
+ACTIVE_PROVIDER = "openrouter"   # <- "ollama" | "huggingface" | "groq" | "openrouter"
+
+if ACTIVE_PROVIDER == "groq":
+    API_KEY   = GROQ_API_KEY
+    API_MODEL = GROQ_MODEL
+    API_URL   = "https://api.groq.com/openai/v1/chat/completions"
+elif ACTIVE_PROVIDER == "huggingface":
+    API_KEY   = HF_API_KEY
+    API_MODEL = HF_MODEL
+    API_URL   = "https://router.huggingface.co/v1/chat/completions"
+elif ACTIVE_PROVIDER == "openrouter":
+    API_KEY   = OPENROUTER_API_KEY
+    API_MODEL = OPENROUTER_MODEL
+    API_URL   = "https://openrouter.ai/api/v1/chat/completions"
+else:  # ollama
+    API_KEY   = "local"
+    API_MODEL = OLLAMA_MODEL_NAME
+    API_URL   = f"{OLLAMA_HOST}/api/chat"
 
 # ─────────────────────────────────────────────
-# OUTPUT FILES
+# PIPELINE SETTINGS
 # ─────────────────────────────────────────────
 
-PREDICTIONS_FILE = os.path.join(OUTPUTS_DIR, "baseline1_predictions.json")
-LOGS_FILE        = os.path.join(OUTPUTS_DIR, "baseline1_logs.json")
+EXPANSION_N_TERMS = 30
+DIAG_SAMPLE_SIZE  = None
+MAX_QUESTIONS     = None
+LOG_EVERY_N       = 10
 
 # ─────────────────────────────────────────────
-# LOGGING
+# BASELINE 1 OUTPUT FILES
 # ─────────────────────────────────────────────
 
-LOG_EVERY_N = 10   # Print progress every N questions
+EXP_NAME         = "fewshot"
+PREDICTIONS_FILE = os.path.join(OUTPUTS_DIR, f"baseline1_{EXP_NAME}_predictions.json")
+LOGS_FILE        = os.path.join(OUTPUTS_DIR, f"baseline1_{EXP_NAME}_logs.json")
+
+# Baseline 1 API
+PREDICTIONS_FILE_B1_API = os.path.join(OUTPUTS_DIR, "baseline1_api_original_predictions.json")
+LOGS_FILE_B1_API        = os.path.join(OUTPUTS_DIR, "baseline1_api_original_logs.json")
+B1_API_EXP_NAME         = "baseline1_api_original"
 
 # ─────────────────────────────────────────────
-# SANITY CHECK (runs when you import this file)
+# BASELINE 2 — BM25
 # ─────────────────────────────────────────────
 
-def verify_paths():
-    """Check all required folders exist."""
-    required = [DATA_DIR, OUTPUTS_DIR, MODELS_DIR, SRC_DIR]
-    all_ok = True
-    for path in required:
-        if not os.path.exists(path):
-            print(f"[settings] WARNING: folder not found: {path}")
-            all_ok = False
-    return all_ok
+BM25_TOP_K          = 5
+BM25_METHOD         = "lucene"
+PREDICTIONS_FILE_B2 = os.path.join(OUTPUTS_DIR, "baseline2_k5_predictions.json")
+LOGS_FILE_B2        = os.path.join(OUTPUTS_DIR, "baseline2_k5_logs.json")
+
+# ─────────────────────────────────────────────
+# BASELINE 3 — MedCPT SEMANTIC RETRIEVAL
+# ─────────────────────────────────────────────
+
+MEDCPT_QUERY_ENCODER        = os.path.join(MODELS_DIR, "MedCPT-Query-Encoder")
+MEDCPT_ARTICLE_ENCODER      = "ncbi/MedCPT-Article-Encoder"
+MEDCPT_TOP_K                = 5
+MEDCPT_BATCH_SIZE           = 32
+PREDICTIONS_FILE_B3         = os.path.join(OUTPUTS_DIR, "baseline3_k5_predictions.json")
+LOGS_FILE_B3                = os.path.join(OUTPUTS_DIR, "baseline3_k5_logs.json")
+PREDICTIONS_FILE_B3_FEWSHOT = os.path.join(OUTPUTS_DIR, "baseline3_fewshot_k5_predictions.json")
+LOGS_FILE_B3_FEWSHOT        = os.path.join(OUTPUTS_DIR, "baseline3_fewshot_k5_logs.json")
+
+# ─────────────────────────────────────────────
+# HYBRID RETRIEVAL
+# ─────────────────────────────────────────────
+
+HYBRID_EXP_NAME         = "weighted_70_30_k5"
+HYBRID_TOP_K            = 5
+HYBRID_CANDIDATES       = 20
+RRF_K_CONSTANT          = 60
+MEDCPT_WEIGHT           = 0.70
+BM25_WEIGHT             = 0.30
+PREDICTIONS_FILE_HYBRID = os.path.join(OUTPUTS_DIR, f"hybrid_{HYBRID_EXP_NAME}_predictions.json")
+LOGS_FILE_HYBRID        = os.path.join(OUTPUTS_DIR, f"hybrid_{HYBRID_EXP_NAME}_logs.json")
+
+# ─────────────────────────────────────────────
+# STAGE 4 — ENTITY BRIDGING
+# ─────────────────────────────────────────────
+
+STAGE4_BRIDGE_TOP_K     = 5
+STAGE4_FINAL_TOP_K      = 8
+PREDICTIONS_FILE_STAGE4 = os.path.join(OUTPUTS_DIR, "stage4_entity_bridge_predictions.json")
+LOGS_FILE_STAGE4        = os.path.join(OUTPUTS_DIR, "stage4_entity_bridge_logs.json")
+
+# ─────────────────────────────────────────────
+# EMBEDDINGS CACHE
+# ─────────────────────────────────────────────
+
+EMBEDDINGS_CACHE_DIR = os.path.join(OUTPUTS_DIR, "embeddings_cache")
+
+
+def verify_settings():
+    print("\n" + "=" * 60)
+    print("  Project Settings")
+    print("=" * 60)
+    print(f"  ACTIVE_PROVIDER  : {ACTIVE_PROVIDER}")
+    if ACTIVE_PROVIDER == "ollama":
+        print(f"  OLLAMA_ACTIVE    : {OLLAMA_ACTIVE_MODEL}")
+        print(f"  OLLAMA_MODEL     : {OLLAMA_MODEL_NAME}")
+        info = OLLAMA_MODELS[OLLAMA_ACTIVE_MODEL]
+        print(f"  GGUF file        : {info['gguf']}")
+        print(f"  Modelfile        : {info['modelfile']}")
+        print(f"  OLLAMA_HOST      : {OLLAMA_HOST}")
+    else:
+        print(f"  API_MODEL        : {API_MODEL}")
+        print(f"  API_URL          : {API_URL}")
+        key_set = "SET" if (API_KEY and len(API_KEY) > 10) else "NOT SET"
+        print(f"  API_KEY          : {key_set}")
+    print(f"  MEDHOP_FILE      : {MEDHOP_FILE}")
+    for name, path in [("DATA_DIR", DATA_DIR), ("OUTPUTS_DIR", OUTPUTS_DIR)]:
+        exists = os.path.exists(path)
+        print(f"  {'OK' if exists else 'MISSING'} {name}")
+    print("=" * 60)
 
 
 if __name__ == "__main__":
-    # Quick test: print all settings
-    print("=" * 50)
-    print("  Project Settings — Baseline 1")
-    print("=" * 50)
-    print(f"  PROJECT_ROOT     : {PROJECT_ROOT}")
-    print(f"  DATA_DIR         : {DATA_DIR}")
-    print(f"  OUTPUTS_DIR      : {OUTPUTS_DIR}")
-    print(f"  MODELS_DIR       : {MODELS_DIR}")
-    print()
-    print(f"  MEDHOP_TRAIN     : {MEDHOP_TRAIN}")
-    print(f"  MEDHOP_DEV       : {MEDHOP_DEV}")
-    print(f"  ACTIVE_DATASET   : {ACTIVE_DATASET}")
-    print(f"  DRUGBANK_VOCAB   : {DRUGBANK_VOCAB}")
-    print(f"  MEDHOP_FILE      : {MEDHOP_FILE}")
-    print()
-    print(f"  OLLAMA_MODEL     : {OLLAMA_MODEL}")
-    print(f"  OLLAMA_HOST      : {OLLAMA_HOST}")
-    print(f"  PREDICTIONS      : {PREDICTIONS_FILE}")
-    print(f"  LOGS_FILE        : {LOGS_FILE}")
-    print()
-    ok = verify_paths()
-    if ok:
-        print("  ✅ All paths verified.")
-    else:
-        print("  ⚠️  Some folders missing — run EnvironmentSetup.py first.")
-    print("=" * 50)
+    verify_settings()

@@ -30,7 +30,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from config.settings import (
-    OLLAMA_MODEL,
+    OLLAMA_MODEL_NAME,
     OLLAMA_HOST,
     LLM_TEMPERATURE,
     LLM_TOP_P,
@@ -80,9 +80,9 @@ def check_model_available(client) -> bool:
         model_names = [m.model for m in models.models]
         # Check with and without tag
         for name in model_names:
-            if OLLAMA_MODEL in name:
+            if OLLAMA_MODEL_NAME in name:
                 return True
-        print(f"  [FAIL] Model '{OLLAMA_MODEL}' not found in Ollama.")
+        print(f"  [FAIL] Model '{OLLAMA_MODEL_NAME}' not found in Ollama.")
         print(f"         Available models: {model_names}")
         print(f"         Run EnvironmentSetup.py to register the model.")
         return False
@@ -126,7 +126,7 @@ def run_inference(client, prompt: str, question_id: str = "") -> dict:
             start_time = time.time()
 
             response = client.chat(
-                model=OLLAMA_MODEL,
+                model=OLLAMA_MODEL_NAME,
                 messages=[
                     {
                         "role":    "user",
@@ -192,7 +192,7 @@ def run_batch(client, prompts: list, log_every: int = 10) -> list:
     failed  = 0
 
     print(f"  [INFO] Starting inference on {total} questions...")
-    print(f"  [INFO] Model: {OLLAMA_MODEL}")
+    print(f"  [INFO] Model: {OLLAMA_MODEL_NAME}")
     print()
 
     batch_start = time.time()
@@ -265,7 +265,7 @@ def main():
     # Step 2 — Check model
     if not check_model_available(client):
         sys.exit(1)
-    print(f"  [OK]   Model '{OLLAMA_MODEL}' is available")
+    print(f"  [OK]   Model '{OLLAMA_MODEL_NAME}' is available")
 
     # Step 3 — Load 3 test questions
     print("\n--- Loading Test Questions ---")
