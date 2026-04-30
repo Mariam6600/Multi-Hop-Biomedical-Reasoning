@@ -19,7 +19,6 @@ Both run on the full MedHop dev set (342 questions) using BioMistral-7B.
 | `src/query_expander.py` | Drug synonym and name expansion |
 | `src/inference_pipeline2.py` | Baseline 2 full pipeline |
 | `src/inference_pipeline3.py` | Baseline 3 full pipeline |
-| `src/inference_pipeline3-1_hybrid.PY` | Hybrid BM25+dense variant |
 | `src/Inference_pipeline3_fewshot.py` | Baseline 3 with few-shot prompting |
 
 ---
@@ -74,11 +73,8 @@ BioCreative IX MedHop Track 2025 metric. No partial correctness exists.
 # Baseline 2 — BM25
 py -3.10 src/inference_pipeline2.py
 
-# Baseline 3 — Dense
+# Baseline 3 — Dense (MedCPT)
 py -3.10 src/inference_pipeline3.py
-
-# Baseline 3 — Hybrid variant
-py -3.10 "src/inference_pipeline3-1_hybrid.PY"
 
 # Baseline 3 — Few-shot
 py -3.10 src/Inference_pipeline3_fewshot.py
