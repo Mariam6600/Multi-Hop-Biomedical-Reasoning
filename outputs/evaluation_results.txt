@@ -19,6 +19,7 @@
        67.0%        67.0%    342     0  qwen3.5-9b                           gold_chain    direct        5  [ORACLE — upper bound only, not a production result]      67.0%
        46.0%        46.0%     50     0  qwen/qwen3.6-plus-preview:free       Expanded      zero-shot     5  [50q — partial/test run, NOT comparable to full 342q]      46.0%
        39.8%        39.8%    342     0  openai/gpt-oss-120b:free             hybrid_bridg  guided        3        39.8%
+       35.4%        35.4%    342     0  ensemble (3-way)                   Major.Vote    majority      3        35.4%
        33.3%        33.3%    342     0  qwen3.5-9b                           hybrid_score  guided        3        33.3%
        33.3%        33.3%    342     0  qwen3.5-9b                           hybrid_score  phase2_gui    3        33.3%
        32.2%        32.2%    342     0  qwen3.5-9b                           hybrid_score  guided        3        32.2%
@@ -88,6 +89,7 @@
 ==============================================================================================================
   Oracle upper bound (gold_chain):         76.9%  [ORACLE — not comparable to papers, included for reference only]
   Best Strict EM%  — production (342q):    39.8%  [openai/gpt-oss-120b:free / hybrid_bridge_boosted / guided]
+  Best Strict EM%  — local ensemble:       35.4%  [ensemble (3-way majority vote) / Qwen3.5-9B]
   Best Lenient EM% — production (342q):    39.8%
   Gap to oracle:                            37.1pp
 
