@@ -70,7 +70,7 @@ connect drug pairs across multiple hops.
 |-----------|---------|--------|
 | eb_guided_retrieval | Guided + bridge context | **33.3%** |
 | eb_kb_guided | Knowledge-base guided bridging | 32.2% |
-| eb_bridge_pivoted | Pivoted bridge entities | **27.8%** |
+| eb_bridge_pivoted | Pivoted bridge entities | 27.8% |
 | eb_cand_filtered | Candidate-filtered bridging | 26.9% |
 | stage4_entity_bridge | Basic entity bridge | 12.9% |
 
