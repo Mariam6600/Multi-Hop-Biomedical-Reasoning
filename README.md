@@ -26,9 +26,9 @@ A systematic study of **retrieval-augmented multi-hop reasoning** for drug inter
 | Baseline 3 | BioMistral-7B | Dense MedCPT (k=5) | 16.4% | +0.6pp |
 | Pipeline 4-5 | **Qwen3.5-9B** | **Hybrid Scored (k=3)** | **33.3%** | **+16.9pp** |
 | Advanced Features | Qwen3.5-9B | Hybrid + Ontology | 32.2% | — |
-| Ensemble | Qwen3.5-9B | Majority Vote | — | — |
+| **Ensemble** | **Qwen3.5-9B** | **Majority Vote (3-way)** | **35.4%** | **+2.1pp** |
 
-> **Best local result: 33.3% EM** — achieved with Qwen3.5-9B + Hybrid Scored Retrieval (BM25 + MedCPT) + Guided Prompt at k=3.
+> **Best local result: 35.4% EM (ensemble)** — achieved by majority voting across three Qwen3.5-9B configurations. Best single model: 33.3% EM with Hybrid Scored Retrieval + Guided Prompt at k=3.
 
 ### Oracle Upper Bound (Not a Production Result)
 | Config | EM (%) | Notes |
@@ -36,7 +36,8 @@ A systematic study of **retrieval-augmented multi-hop reasoning** for drug inter
 | Gold chain k=3 | 76.9% | Uses true answer path — upper bound only |
 | Gold chain k=5 | 67.0% | Uses true answer path — upper bound only |
 
-> **Gap to oracle: 43.6pp** — indicates significant room for retrieval improvement.
+> **Gap to oracle (best single model): 43.6pp** — indicates significant room for retrieval improvement.
+> **Gap to oracle (ensemble): 41.5pp** — ensemble closes 2.1pp of the gap.
 
 ---
 
@@ -51,12 +52,12 @@ A systematic study of **retrieval-augmented multi-hop reasoning** for drug inter
 | CLaC | 67.6% | Qwen2.5-Coder-32B + Wikipedia + PubMed |
 | **Orekhovich** | **43.9%** | **Llama3-Med42-8B + BM25S + MedEmbed — Local Ollama** |
 | lasigeBioTM | 28.3% | Mistral-7B + Mondo Ontology |
-| **Our Best (local)** | **33.3%** | **Qwen3.5-9B + Hybrid Scored — Local Ollama** |
+| **Our Best (local)** | **35.4%** | **Qwen3.5-9B Ensemble (3-way majority vote) — Local Ollama** |
 | DeepRAG | 20.7% | DeepSeek R1 + Wikipedia + DPO |
 | CaresAI | 18.6% | LoRA fine-tuned LLaMA-3 8B |
 | Random Baseline | 11.6% | — |
 
-> Our best local result (**33.3%**) surpasses three published systems (lasigeBioTM 28.3%, DeepRAG 20.7%, CaresAI 18.6%) and approaches the closest comparable local-Ollama system (Orekhovich 43.9%).
+> Our best local result (**35.4% ensemble**) surpasses three published systems (lasigeBioTM 28.3%, DeepRAG 20.7%, CaresAI 18.6%) and approaches the closest comparable local-Ollama system (Orekhovich 43.9%). Best single model achieves 33.3%.
 
 ---
 
@@ -103,7 +104,7 @@ This repository is organized into **5 branches**, each representing a developmen
 | [`baseline2-3`](../../tree/baseline2-3) | Sparse + Dense RAG | BM25 and MedCPT retrieval with BioMistral | 16.4% |
 | [`pipeline4-5`](../../tree/pipeline4-5) | Hybrid RAG + Qwen | **Best result: 33.3% EM** | **33.3%** |
 | [`advanced-features`](../../tree/advanced-features) | Augmentation modules | Query decomp, ontology, entity bridging, adaptive | 32.2% |
-| [`ensemble`](../../tree/ensemble) | Ensemble | Majority vote over best configs | — |
+| [`ensemble`](../../tree/ensemble) | Ensemble | Majority vote (3-way) over best configs | **35.4%** |
 
 ---
 
@@ -121,8 +122,11 @@ Across all Qwen experiments, top-3 documents outperform top-5 and top-10. Contex
 **4. Complex reasoning modules do not improve over well-tuned retrieval**
 Query decomposition (28.4%), ontology verification (32.2%), and entity bridging (27.8%) all fall short of the simple guided hybrid retrieval (33.3%). For 7-9B models, retrieval precision matters more than reasoning complexity.
 
-**5. 43.6pp gap to oracle upper bound**
-Oracle (gold-chain) retrieval achieves 76.9%. The gap to our 33.3% is almost entirely an evidence retrieval problem — the LLM can reason correctly given perfect context.
+**5. 43.6pp gap to oracle upper bound (single model), reduced to 41.5pp with ensemble**
+Oracle (gold-chain) retrieval achieves 76.9%. The gap to our best single model (33.3%) is almost entirely an evidence retrieval problem — the LLM can reason correctly given perfect context. The ensemble (35.4%) closes 2.1pp of this gap by leveraging complementary errors across prompt strategies.
+
+**6. Ensemble majority voting improves over any single configuration (+2.05pp)**
+Three-way majority voting across guided, conservative-ontology, and candidate-aware configurations achieves 35.4% EM — 7 additional correct answers over the best single model. 70.5% of questions receive unanimous agreement, confirming that the three strategies largely agree but make complementary errors on the remaining 29.5%.
 
 ---
 
