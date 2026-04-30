@@ -68,14 +68,16 @@ connect drug pairs across multiple hops.
 
 | Experiment | Strategy | EM (%) |
 |-----------|---------|--------|
-| eb_guided_retrieval | Guided + bridge context | [see outputs] |
-| eb_kb_guided | Knowledge-base guided bridging | [see outputs] |
+| eb_guided_retrieval | Guided + bridge context | **33.3%** |
+| eb_kb_guided | Knowledge-base guided bridging | 32.2% |
 | eb_bridge_pivoted | Pivoted bridge entities | **27.8%** |
-| eb_cand_filtered | Candidate-filtered bridging | [see outputs] |
+| eb_cand_filtered | Candidate-filtered bridging | 26.9% |
 | stage4_entity_bridge | Basic entity bridge | 12.9% |
 
-> Entity bridging peaks at 27.8% — structural knowledge helps but
-> cannot compensate for limited retrieval precision.
+> Entity bridging with guided retrieval matches Pipeline 4-5 best (33.3%),
+> confirming that bridge-aware retrieval provides useful context. However,
+> KB-guided (32.2%) and pivoted (27.8%) variants do not exceed the simpler
+> guided approach.
 
 ---
 
@@ -85,30 +87,34 @@ Also incorporates Wikipedia as an external supplementary source.
 
 | Experiment | Strategy | EM (%) |
 |-----------|---------|--------|
-| adaptive_atk | Adaptive top-K selection | [see outputs] |
-| adaptive_b4exp11_wiki_v2_k3 | Wiki v2, k=3 | [see outputs] |
-| adaptive_b4exp11_wiki_v2_sequential_k3 | Sequential wiki | [see outputs] |
-| adaptive_b4exp11_wiki_v2_query2doc_k3 | Query2Doc expansion | [see outputs] |
-| adaptive_b4exp11_wiki_v2_medical_sections_k3 | Medical sections | [see outputs] |
-| adaptive_b4exp12_combined_v2 | Combined adaptive | [see outputs] |
-| adaptive_b4exp13_signal | Signal-based selection | [see outputs] |
+| adaptive_b4exp12_combined_v2 | Combined adaptive | **31.9%** |
+| adaptive_adaptive_atk | Adaptive top-K selection | 31.3% |
+| adaptive_b4exp13_signal | Signal-based selection | 29.0% |
+| adaptive_b4exp11_wiki_v2_query2doc_k3 | Query2Doc expansion | 25.7% |
+| adaptive_b4exp11_wiki_v2_k3 | Wiki v2, k=3 | 25.2% |
+| adaptive_b4exp11_wiki_v2_sequential_k3 | Sequential wiki | 24.9% |
+| adaptive_b4exp11_wiki_v2_medical_sections_k3 | Medical sections | 21.9% |
 
-> Run `py -3.10 src/evaluate_all.py` to populate EM values from outputs/.
+> Wikipedia augmentation does NOT improve over hybrid scored retrieval (22.2%)
+> for most configurations. Query2Doc expansion (25.7%) shows the best Wikipedia
+> result but still falls short of guided hybrid retrieval (33.3%). External
+> knowledge introduces noise that confuses the smaller local model.
 
 ---
 
 ### Summary: All Modules vs Pipeline 4-5 Best
-| Module | Best Config | Best EM (%) |
-|--------|------------|-------------|
-| Pipeline 4-5 (baseline for this stage) | guided, k=3 | **33.3%** |
-| Query Decomposition | qd_guided | 28.4% |
-| Ontology Verification | conservative | 32.2% |
-| Entity Bridging | bridge_pivoted | 27.8% |
+| Module | Best Config | Best EM (%) | vs Pipeline 4-5 Best |
+|--------|------------|-------------|----------------------|
+| Pipeline 4-5 (baseline for this stage) | guided, k=3 | **33.3%** | -- |
+| Entity Bridging | eb_guided_retrieval | **33.3%** | 0.0pp |
+| Ontology Verification | ov-exp1 conservative | 32.2% | -1.1pp |
+| Adaptive Retrieval | combined_v2 | 31.9% | -1.4pp |
+| Query Decomposition | qd_guided | 28.4% | -4.9pp |
 
-> None of the four advanced modules exceeded the hybrid scored guided
-> retrieval baseline (33.3%). This finding suggests that for small local
-> models (7-9B), simpler but well-tuned retrieval outperforms complex
-> multi-step reasoning augmentation.
+> None of the advanced modules exceed the Pipeline 4-5 best (33.3%).
+> However, the Entity Bridging module (33.3%) matches it with a different
+> approach, providing diversity that proves valuable for ensemble voting
+> (which achieves 35.4% EM — see ensemble branch).
 
 ---
 
