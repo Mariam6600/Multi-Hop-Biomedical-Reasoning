@@ -24,7 +24,7 @@ from pathlib import Path
 try:
     from dotenv import load_dotenv
     _env_path = Path(__file__).parent.parent / ".env"
-    load_dotenv(dotenv_path=r"C:\Users\LOQ\Desktop\Graduation Project2\Code Files\.env")
+    load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
 except ImportError:
     print("[WARN] python-dotenv not installed. Run: pip install python-dotenv")
 
