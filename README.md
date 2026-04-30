@@ -152,7 +152,7 @@ git clone https://github.com/Mariam6600/Multi-Hop-Biomedical-Reasoning.git
 cd Multi-Hop-Biomedical-Reasoning
 
 # 2. Install dependencies
-pip install ollama bm25s PyStemmer scispacy langchain datasets
+pip install -r requirements.txt
 
 # 3. Copy environment template
 cp .env.example .env
