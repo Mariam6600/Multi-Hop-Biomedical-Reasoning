@@ -1,0 +1,1 @@
+FROM ./Qwen2.5-7B-Instruct-Q4_K_M.ggufPARAMETER temperature 0.1PARAMETER num_ctx 4096PARAMETER stop "<|im_end|>"PARAMETER num_gpu 99
