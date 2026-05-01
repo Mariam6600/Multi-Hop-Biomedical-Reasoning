@@ -96,7 +96,7 @@ Multi-Hop Question (MedHop, 342 questions)
 
 ## 📂 Repository Structure
 
-This repository is organized into **5 branches**, each representing a development stage:
+This repository is organized into **6 branches**, each representing a development stage:
 
 | Branch | Stage | Key Contribution | Best EM |
 |--------|-------|-----------------|---------|
