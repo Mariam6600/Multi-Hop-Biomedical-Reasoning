@@ -1,27 +1,16 @@
-# ─────────────────────────────────────────────────────────────
-# Multi-Hop Biomedical Reasoning — Python Dependencies
-# Python 3.10+ | Ollama 0.13+ required
-# ─────────────────────────────────────────────────────────────
+# Multi-Hop Biomedical Reasoning
+# BioCreative IX 2025 - MedHop Track
+# Core dependencies
+python-dotenv>=1.0.0
+ollama>=0.4.0
+bm25s>=0.2.4
+PyStemmer>=2.2.0
+sentence-transformers>=2.2.0
+numpy>=1.24.0
+pandas>=2.0.0
 
-# Core
-python-dotenv>=1.0.0          # .env file loading (config/settings.py)
+# Optional:
+# scispacy>=0.5.0
+# langchain>=0.1.0
+# datasets>=2.14.0
 
-# LLM Inference (Local)
-ollama>=0.4.0                 # Ollama Python client (src/llm_runner.py)
-
-# Retrieval — Sparse (BM25)
-bm25s>=0.2.4                  # BM25 sparse retrieval (src/retriever.py)
-PyStemmer>=2.2.0              # Stemming for BM25 tokenization
-
-# Retrieval — Dense (MedCPT Embeddings)
-sentence-transformers>=2.2.0  # MedCPT query/article encoders (src/retriever_semantic.py)
-                              # Also used: CrossEncoder reranking (src/reranker.py)
-
-# Numerical & Data
-numpy>=1.24.0                 # Score computations (retriever_hybrid_scored, diagnostics)
-pandas>=2.0.0                 # DrugBank CSV processing (src/kb_builder.py)
-
-# Optional — NLP (not used in main pipeline, may be needed for extensions)
-# scispacy>=0.5.0              # Biomedical NER (planned, not yet integrated)
-# langchain>=0.1.0             # LLM orchestration (planned, not yet integrated)
-# datasets>=2.14.0             # HuggingFace datasets (planned, not yet integrated)
