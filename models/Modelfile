@@ -1,4 +1,4 @@
-FROM C:/Users/LOQ/Desktop/Graduation Project2/Code Files/models/BioMistral-7B.Q4_K_M.gguf
+FROM ./BioMistral-7B.Q4_K_M.gguf
 
 PARAMETER temperature 0.1
 PARAMETER top_p 0.9
