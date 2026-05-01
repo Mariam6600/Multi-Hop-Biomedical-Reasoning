@@ -24,7 +24,7 @@ Prerequisites (do these BEFORE running this script):
   - Ollama installed and running:
         ollama serve
   - GGUF file downloaded from HuggingFace and placed at:
-        Code Files\\models\\BioMistral-7B.Q4_K_M.gguf
+        models\\BioMistral-7B.Q4_K_M.gguf
 """
 
 import sys
