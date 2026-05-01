@@ -1,4 +1,0 @@
-ollama>=0.3.0
-bm25s>=0.1.0
-PyStemmer>=2.0.0
-scispacy>=0.5.0
