@@ -1,7 +1,7 @@
 """
 EnvironmentSetup.py
 ====================
-Biomedical Multi-Hop QA Project G╟Ў Baseline 1
+Biomedical Multi-Hop QA Project Gя┐╜я┐╜ Baseline 1
 Full environment preparation script.
 
 What this script does:
@@ -34,9 +34,9 @@ import os
 import platform
 import time
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 # CONFIGURATION
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 # Root of the project = folder containing this script
 PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -79,9 +79,9 @@ OLLAMA_HOST = "http://localhost:11434"
 TEST_QUESTION = "What is the mechanism of action of aspirin?"
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 # HELPERS
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def print_header(title: str):
     print("\n" + "=" * 60)
@@ -101,12 +101,12 @@ def print_info(msg: str):
     print(f"  [INFO] {msg}")
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 1 G╟Ў CHECK PYTHON VERSION
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 1 Gя┐╜я┐╜ CHECK PYTHON VERSION
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def check_python_version():
-    print_header("Step 1 G╟Ў Python Version Check")
+    print_header("Step 1 Gя┐╜я┐╜ Python Version Check")
     current = sys.version_info
     print_info(f"Detected Python {current.major}.{current.minor}.{current.micro}")
 
@@ -121,12 +121,12 @@ def check_python_version():
         return False
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 2 G╟Ў CHECK OLLAMA SERVICE
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 2 Gя┐╜я┐╜ CHECK OLLAMA SERVICE
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def check_ollama():
-    print_header("Step 2 G╟Ў Ollama Service Check")
+    print_header("Step 2 Gя┐╜я┐╜ Ollama Service Check")
     try:
         import urllib.request
         urllib.request.urlopen(OLLAMA_HOST, timeout=3)
@@ -139,12 +139,12 @@ def check_ollama():
         return False
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 3 G╟Ў CHECK GPU
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 3 Gя┐╜я┐╜ CHECK GPU
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def check_gpu():
-    print_header("Step 3 G╟Ў GPU / CUDA Check")
+    print_header("Step 3 Gя┐╜я┐╜ GPU / CUDA Check")
     try:
         result = subprocess.run(
             ["nvidia-smi",
@@ -161,20 +161,20 @@ def check_gpu():
     except Exception as e:
         print_warn(f"GPU check error: {e}")
 
-    print_info("Ollama handles GPU inference internally G╟Ў nvcc is not required.")
+    print_info("Ollama handles GPU inference internally Gя┐╜я┐╜ nvcc is not required.")
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 4 G╟Ў CHECK GGUF FILE EXISTS
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 4 Gя┐╜я┐╜ CHECK GGUF FILE EXISTS
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def check_gguf_file():
-    print_header("Step 4 G╟Ў GGUF Model File Check")
+    print_header("Step 4 Gя┐╜я┐╜ GGUF Model File Check")
     print_info(f"Looking for: {GGUF_MODEL_PATH}")
 
     if os.path.isfile(GGUF_MODEL_PATH):
         size_gb = os.path.getsize(GGUF_MODEL_PATH) / (1024 ** 3)
-        print_ok(f"GGUF file found G╟Ў size: {size_gb:.2f} GB")
+        print_ok(f"GGUF file found Gя┐╜я┐╜ size: {size_gb:.2f} GB")
         return True
     else:
         print_fail("GGUF file NOT found.")
@@ -184,12 +184,12 @@ def check_gguf_file():
         return False
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 5 G╟Ў INSTALL PYTHON LIBRARIES
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 5 Gя┐╜я┐╜ INSTALL PYTHON LIBRARIES
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def install_packages():
-    print_header("Step 5 G╟Ў Installing Python Libraries")
+    print_header("Step 5 Gя┐╜я┐╜ Installing Python Libraries")
 
     print_info("Upgrading pip...")
     subprocess.run(
@@ -221,12 +221,12 @@ def install_packages():
         print_info(f"Manual install:\n  pip install {SCISPACY_MODEL_URL}")
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 6 G╟Ў VERIFY IMPORTS
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 6 Gя┐╜я┐╜ VERIFY IMPORTS
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def verify_imports():
-    print_header("Step 6 G╟Ў Verifying Library Imports")
+    print_header("Step 6 Gя┐╜я┐╜ Verifying Library Imports")
 
     libraries = {
         "bm25s":     "bm25s",
@@ -241,20 +241,20 @@ def verify_imports():
     for import_name, pip_name in libraries.items():
         try:
             importlib.import_module(import_name)
-            print_ok(f"{pip_name} G╟Ў importable GгЇ")
+            print_ok(f"{pip_name} Gя┐╜я┐╜ importable Gя┐╜я┐╜")
         except ImportError:
-            print_fail(f"{pip_name} G╟Ў NOT importable. Run: pip install {pip_name}")
+            print_fail(f"{pip_name} Gя┐╜я┐╜ NOT importable. Run: pip install {pip_name}")
             all_ok = False
 
     return all_ok
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 7 G╟Ў CREATE FOLDER STRUCTURE
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 7 Gя┐╜я┐╜ CREATE FOLDER STRUCTURE
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def create_folder_structure():
-    print_header("Step 7 G╟Ў Creating Project Folder Structure")
+    print_header("Step 7 Gя┐╜я┐╜ Creating Project Folder Structure")
 
     for folder in REQUIRED_FOLDERS:
         path = os.path.join(PROJECT_ROOT, folder)
@@ -273,12 +273,12 @@ def create_folder_structure():
     print_ok("Folder structure ready.")
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 8 G╟Ў CREATE OLLAMA MODELFILE
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 8 Gя┐╜я┐╜ CREATE OLLAMA MODELFILE
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def create_modelfile():
-    print_header("Step 8 G╟Ў Creating Ollama Modelfile")
+    print_header("Step 8 Gя┐╜я┐╜ Creating Ollama Modelfile")
 
     # Ollama requires forward slashes even on Windows
     gguf_path_for_ollama = GGUF_MODEL_PATH.replace("\\", "/")
@@ -305,12 +305,12 @@ You are a biomedical expert assistant. Answer biomedical questions accurately an
     return True
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 9 G╟Ў REGISTER MODEL IN OLLAMA
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 9 Gя┐╜я┐╜ REGISTER MODEL IN OLLAMA
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def register_model_in_ollama():
-    print_header("Step 9 G╟Ў Registering BioMistral in Ollama")
+    print_header("Step 9 Gя┐╜я┐╜ Registering BioMistral in Ollama")
 
     # Check if already registered
     try:
@@ -352,12 +352,12 @@ def register_model_in_ollama():
         return False
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
-# STEP 10 G╟Ў TEST THE MODEL
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
+# STEP 10 Gя┐╜я┐╜ TEST THE MODEL
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def test_model():
-    print_header("Step 10 G╟Ў Testing BioMistral Model")
+    print_header("Step 10 Gя┐╜я┐╜ Testing BioMistral Model")
     print_info(f"Test question: '{TEST_QUESTION}'")
     print_info("First run may take 30-60 seconds to load the model into VRAM...")
 
@@ -374,10 +374,10 @@ def test_model():
         answer = response["message"]["content"].strip()
         print_ok(f"Model responded in {elapsed:.1f} seconds")
         print()
-        print("  GЎюGЎ╟ Model Answer " + "GЎ╟" * 43)
+        print("  Gя┐╜я┐╜Gя┐╜я┐╜ Model Answer " + "Gя┐╜я┐╜" * 43)
         for line in answer[:500].split("\n"):
-            print(f"  GЎщ {line}")
-        print("  GЎЎ" + "GЎ╟" * 58)
+            print(f"  Gя┐╜я┐╜ {line}")
+        print("  Gя┐╜я┐╜" + "Gя┐╜я┐╜" * 58)
         return True
 
     except Exception as e:
@@ -387,9 +387,9 @@ def test_model():
         return False
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 # FINAL SUMMARY
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def print_summary(results: dict):
     print_header("Final Setup Summary")
@@ -404,26 +404,26 @@ def print_summary(results: dict):
 
     print()
     if all_passed:
-        print("  Gгр  Environment is FULLY READY.")
+        print("  Gя┐╜я┐╜  Environment is FULLY READY.")
         print()
         print("  Next file to create: config/settings.py")
         print(f"  Ollama model name  : '{OLLAMA_MODEL_NAME}'")
         print(f"  Project root       : {PROJECT_ROOT}")
     else:
-        print("  G▄сn+┼  Some checks failed.")
+        print("  Gя┐╜я┐╜n+я┐╜  Some checks failed.")
         print("  Fix the [FAIL] items above, then re-run this script.")
 
     print("=" * 60 + "\n")
 
 
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 # MAIN
-# GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟GЎ╟
+# Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜Gя┐╜я┐╜
 
 def main():
     print("\n" + "=" * 60)
     print("  Biomedical Multi-Hop QA Project")
-    print("  Environment Setup G╟Ў Baseline 1")
+    print("  Environment Setup Gя┐╜я┐╜ Baseline 1")
     print("=" * 60)
     print(f"  OS      : {platform.system()} {platform.release()}")
     print(f"  Python  : {sys.version.split()[0]}")
@@ -441,7 +441,7 @@ def main():
     # Step 2
     results["Ollama running"] = check_ollama()
 
-    # Step 3 G╟Ў informational only
+    # Step 3 Gя┐╜я┐╜ informational only
     check_gpu()
 
     # Step 4
@@ -469,9 +469,9 @@ def main():
     else:
         print_warn("\nSkipping model registration and test due to missing prerequisites.")
         if not results["Ollama running"]:
-            print_info("Gх╞ Start Ollama: ollama serve")
+            print_info("Gя┐╜я┐╜ Start Ollama: ollama serve")
         if not results["GGUF file present"]:
-            print_info(f"Gх╞ Place GGUF at: {GGUF_MODEL_PATH}")
+            print_info(f"Gя┐╜я┐╜ Place GGUF at: {GGUF_MODEL_PATH}")
         print_info("Re-run this script after fixing the above.")
         results["Model registered in Ollama"] = False
         results["Model test passed"] = False

@@ -5,8 +5,9 @@ Biomedical Multi-Hop QA Project
 يدعم: ollama (محلي) | huggingface | groq | openrouter
 
 النماذج المحلية المتوفرة في models/:
-  - qwen2.5-7b   ← Qwen2.5-7B-Instruct-Q4_K_M.gguf   (القديم)
-  - qwen3.5-9b   ← Qwen3.5-9B-Q4_K_M_2.gguf           (الجديد)
+  - biomistral-7b ← BioMistral-7B.Q4_K_M.gguf         (طبي متخصص)
+  - qwen2.5-7b    ← Qwen2.5-7B-Instruct-Q4_K_M.gguf   (عام)
+  - qwen3.5-9b    ← Qwen3.5-9B-Q4_K_M_2.gguf          (أحدث)
 
 للتبديل بين النماذج المحلية: غيّر OLLAMA_ACTIVE_MODEL فقط
 
@@ -24,7 +25,7 @@ from pathlib import Path
 try:
     from dotenv import load_dotenv
     _env_path = Path(__file__).parent.parent / ".env"
-    load_dotenv(dotenv_path=Path(__file__).parent.parent / ".env")
+    load_dotenv(dotenv_path=_env_path)
 except ImportError:
     print("[WARN] python-dotenv not installed. Run: pip install python-dotenv")
 
@@ -48,16 +49,25 @@ MEDHOP_TRAIN   = os.path.join(DATA_DIR, "qangaroo_v1.1", "qangaroo_v1.1", "medho
 MEDHOP_DEV     = os.path.join(DATA_DIR, "qangaroo_v1.1", "qangaroo_v1.1", "medhop", "dev.json")
 ACTIVE_DATASET = MEDHOP_DEV
 
-MEDHOP_FILE    = os.path.join(DATA_DIR, "medhop.json")
+# MEDHOP_FILE: used by inference pipelines (TRAIN for classifier training)
+MEDHOP_FILE    = MEDHOP_TRAIN
+
+# MEDHOP_TRAIN_FILE: used by classifiers for training
+MEDHOP_TRAIN_FILE = MEDHOP_TRAIN
 DRUGBANK_VOCAB = os.path.join(DATA_DIR, "drugbank_all_drugbank_vocabulary.csv", "drugbank vocabulary.csv")
 
 # ─────────────────────────────────────────────
 # LOCAL MODELS (Ollama)
 # ─────────────────────────────────────────────
 
-OLLAMA_ACTIVE_MODEL = "qwen3.5-9b"   # <- "qwen2.5-7b" | "qwen3.5-9b"
+OLLAMA_ACTIVE_MODEL = "biomistral-7b"   # <- "biomistral-7b" | "qwen2.5-7b" | "qwen3.5-9b"
 
 OLLAMA_MODELS = {
+    "biomistral-7b": {
+        "name":      "biomistral-7b",
+        "modelfile": "Modelfile-biomistral",
+        "gguf":      "BioMistral-7B.Q4_K_M.gguf",
+    },
     "qwen2.5-7b": {
         "name":      "qwen2.5-7b",
         "modelfile": "Modelfile-qwen",
@@ -92,9 +102,9 @@ GROQ_API_KEY       = os.getenv("GROQ_API_KEY", "")
 GROQ_MODEL         = "deepseek-ai/DeepSeek-R1-Distill-Llama-70B"  #qwen/qwen3-32b  *llama-3.3-70b-versatile *deepseek-r1-distill-llama-70b
 
 OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
-OPENROUTER_MODEL   = "openrouter/free"  #qwen/qwen3.6-flash *nvidia/nemotron-3-super-120b-a12b:free *openai/gpt-oss-120b:free
+OPENROUTER_MODEL   = "qwen/qwen3.6-plus-preview"  #qwen/qwen3.6-flash *nvidia/nemotron-3-super-120b-a12b:free *openai/gpt-oss-120b:free
 
-ACTIVE_PROVIDER = "openrouter"   # <- "ollama" | "huggingface" | "groq" | "openrouter"
+ACTIVE_PROVIDER = "ollama"   # <- "ollama" | "huggingface" | "groq" | "openrouter"
 
 if ACTIVE_PROVIDER == "groq":
     API_KEY   = GROQ_API_KEY
